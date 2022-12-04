@@ -2,9 +2,12 @@
 
 void delayMs(uint16_t time)
 {
-    uint8_t freqMhz = SYS_CLK_FREQ_MHz;
+    uint16_t freqMhz = time * SYS_CLK_FREQ_MHz;
 
-    unsigned char i, j;
+    unsigned char i;
+#if (SYS_ISA != ISA_STC_Y1)
+    unsigned char j;
+#endif
     while (freqMhz--)
     {
 #if (SYS_ISA == ISA_STC_Y1)
