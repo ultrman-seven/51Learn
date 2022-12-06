@@ -2,6 +2,11 @@
 #define F14B5884_5F28_43E1_A7D5_B1EF8011706E
 #include "stcint.h"
 #include "INTRINS.H"
+#ifndef __VS_CODE_
+#define def_s_bit(_r, _bit) ((_r) ^ (_bit))
+#else
+#define def_s_bit(_r, _bit) (0)
+#endif
 
 // 系统时钟
 #define SYS_CLK_FREQ (11059200)

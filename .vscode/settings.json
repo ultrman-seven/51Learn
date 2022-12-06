@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "intrins.h": "c",
-        "common.h": "c"
+        "common.h": "c",
+        "reg51.h": "c",
+        "REG51.H": "cpp",
+        "reg52.h": "c",
+        "REG52.H": "cpp"
     }
 }
