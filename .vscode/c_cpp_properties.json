@@ -12,6 +12,7 @@
                 "_UNICODE",
                 "sfr=char",
                 "sbit=char",
+                "code=const",
                 "__VS_CODE_"
             ],
             "windowsSdkVersion": "10.0.19041.0",

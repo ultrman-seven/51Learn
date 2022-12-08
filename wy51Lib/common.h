@@ -40,5 +40,5 @@
 #define SYS_ISA ISA_STC_Y1
 
 void delayMs(uint16_t time);
-
+void delay(uint16_t time);
 #endif /* F14B5884_5F28_43E1_A7D5_B1EF8011706E */

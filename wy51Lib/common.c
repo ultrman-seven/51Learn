@@ -1,5 +1,11 @@
 #include "common.h"
 
+void delay(uint16_t time)
+{
+    while (time--)
+        _nop_();
+}
+
 void delayMs(uint16_t time)
 {
     uint16_t freqMhz = time * SYS_CLK_FREQ_MHz;
