@@ -76,7 +76,7 @@ void smgShowIntNumInLoop(int32_t num)
 void smgShowIntNumInLoop(int32_t num)
 {
 }
-k
+
 #ifdef __SMG_TEST_
 int main()
 {
