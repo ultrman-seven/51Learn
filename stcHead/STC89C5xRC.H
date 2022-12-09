@@ -1,12 +1,8 @@
-#ifndef __STC89C5xRC_RDP_H_
-#define __STC89C5xRC_RDP_H_
+#ifndef __STC89C5xRC_RDP_H__
+#define __STC89C5xRC_RDP_H__
 
 /////////////////////////////////////////////////
-#ifndef __VS_CODE_
-#define def_s_bit(_r, _bit) ((_r) ^ (_bit))
-#else
-#define def_s_bit(_r, _bit) (0)
-#endif
+
 /* The following is STC additional SFR */
 
 /* sfr  AUXR  = 0x8e; */
@@ -14,13 +10,13 @@
 /* sfr  IPH   = 0xb7; */
 
 sfr  P4  = 0xe8;
-sbit P46  = def_s_bit( P4, 6);
-sbit P45  = def_s_bit( P4, 5);
-sbit P44  = def_s_bit( P4, 4);
-sbit P43  = def_s_bit( P4, 3);
-sbit P42  = def_s_bit( P4, 2);
-sbit P41  = def_s_bit( P4, 1);
-sbit P40  = def_s_bit( P4, 0);
+sbit P46 = P4^6;
+sbit P45 = P4^5;       //ISP下载需勾选"ALE脚用作P4.5口"
+sbit P44 = P4^4;
+sbit P43 = P4^3;
+sbit P42 = P4^2;
+sbit P41 = P4^1;
+sbit P40 = P4^0;
 
 sfr  XICON = 0xc0;
 
@@ -48,41 +44,41 @@ Modification according to DataSheet from April 1999
 
 /*  BYTE Registers  */
 sfr P0   = 0x80;
-sbit P00  = def_s_bit( P0, 0);
-sbit P01  = def_s_bit( P0, 1);
-sbit P02  = def_s_bit( P0, 2);
-sbit P03  = def_s_bit( P0, 3);
-sbit P04  = def_s_bit( P0, 4);
-sbit P05  = def_s_bit( P0, 5);
-sbit P06  = def_s_bit( P0, 6);
-sbit P07  = def_s_bit( P0, 7);
+sbit P00 = P0^0;
+sbit P01 = P0^1;
+sbit P02 = P0^2;
+sbit P03 = P0^3;
+sbit P04 = P0^4;
+sbit P05 = P0^5;
+sbit P06 = P0^6;
+sbit P07 = P0^7;
 sfr P1   = 0x90;
-sbit P10  = def_s_bit( P1, 0);
-sbit P11  = def_s_bit( P1, 1);
-sbit P12  = def_s_bit( P1, 2);
-sbit P13  = def_s_bit( P1, 3);
-sbit P14  = def_s_bit( P1, 4);
-sbit P15  = def_s_bit( P1, 5);
-sbit P16  = def_s_bit( P1, 6);
-sbit P17  = def_s_bit( P1, 7);
+sbit P10 = P1^0;
+sbit P11 = P1^1;
+sbit P12 = P1^2;
+sbit P13 = P1^3;
+sbit P14 = P1^4;
+sbit P15 = P1^5;
+sbit P16 = P1^6;
+sbit P17 = P1^7;
 sfr P2   = 0xA0;
-sbit P20  = def_s_bit( P2, 0);
-sbit P21  = def_s_bit( P2, 1);
-sbit P22  = def_s_bit( P2, 2);
-sbit P23  = def_s_bit( P2, 3);
-sbit P24  = def_s_bit( P2, 4);
-sbit P25  = def_s_bit( P2, 5);
-sbit P26  = def_s_bit( P2, 6);
-sbit P27  = def_s_bit( P2, 7);
+sbit P20 = P2^0;
+sbit P21 = P2^1;
+sbit P22 = P2^2;
+sbit P23 = P2^3;
+sbit P24 = P2^4;
+sbit P25 = P2^5;
+sbit P26 = P2^6;
+sbit P27 = P2^7;
 sfr P3   = 0xB0;
-sbit P30  = def_s_bit( P3, 0);
-sbit P31  = def_s_bit( P3, 1);
-sbit P32  = def_s_bit( P3, 2);
-sbit P33  = def_s_bit( P3, 3);
-sbit P34  = def_s_bit( P3, 4);
-sbit P35  = def_s_bit( P3, 5);
-sbit P36  = def_s_bit( P3, 6);
-sbit P37  = def_s_bit( P3, 7);
+sbit P30 = P3^0;
+sbit P31 = P3^1;
+sbit P32 = P3^2;
+sbit P33 = P3^3;
+sbit P34 = P3^4;
+sbit P35 = P3^5;
+sbit P36 = P3^6;
+sbit P37 = P3^7;
 sfr PSW  = 0xD0;
 sfr ACC  = 0xE0;
 sfr B    = 0xF0;
@@ -138,98 +134,98 @@ sfr CCAP4H = 0xFE;
 
 /*  BIT Registers  */
 /*  PSW   */
-sbit CY    = def_s_bit( PSW, 7);
-sbit AC    = def_s_bit( PSW, 6);
-sbit F0    = def_s_bit( PSW, 5);
-sbit RS1   = def_s_bit( PSW, 4);
-sbit RS0   = def_s_bit( PSW, 3);
-sbit OV    = def_s_bit( PSW, 2);
-sbit F1    = def_s_bit( PSW, 1);
-sbit P     = def_s_bit( PSW, 0);
+sbit CY   = PSW^7;
+sbit AC   = PSW^6;
+sbit F0   = PSW^5;
+sbit RS1  = PSW^4;
+sbit RS0  = PSW^3;
+sbit OV   = PSW^2;
+sbit F1   = PSW^1;
+sbit P    = PSW^0;
 
 /*  TCON  */
-sbit TF1   = def_s_bit( TCON, 7);
-sbit TR1   = def_s_bit( TCON, 6);
-sbit TF0   = def_s_bit( TCON, 5);
-sbit TR0   = def_s_bit( TCON, 4);
-sbit IE1   = def_s_bit( TCON, 3);
-sbit IT1   = def_s_bit( TCON, 2);
-sbit IE0   = def_s_bit( TCON, 1);
-sbit IT0   = def_s_bit( TCON, 0);
+sbit TF1  = TCON^7;
+sbit TR1  = TCON^6;
+sbit TF0  = TCON^5;
+sbit TR0  = TCON^4;
+sbit IE1  = TCON^3;
+sbit IT1  = TCON^2;
+sbit IE0  = TCON^1;
+sbit IT0  = TCON^0;
 
 /*  IE   */
-sbit EA    = def_s_bit( IE, 7);
-sbit EC    = def_s_bit( IE, 6);
-sbit ET2   = def_s_bit( IE, 5);
-sbit ES    = def_s_bit( IE, 4);
-sbit ET1   = def_s_bit( IE, 3);
-sbit EX1   = def_s_bit( IE, 2);
-sbit ET0   = def_s_bit( IE, 1);
-sbit EX0   = def_s_bit( IE, 0);
+sbit EA   = IE^7;
+sbit EC   = IE^6;
+sbit ET2  = IE^5;
+sbit ES   = IE^4;
+sbit ET1  = IE^3;
+sbit EX1  = IE^2;
+sbit ET0  = IE^1;
+sbit EX0  = IE^0;
 
 /*  IP   */ 
-/*  sbit PPC   = def_s_bit( IP, 6);
-sbit PT2   = def_s_bit( IP, 5);
-sbit PS    = def_s_bit( IP, 4);
-sbit PT1   = def_s_bit( IP, 3);
-sbit PX1   = def_s_bit( IP, 2);
-sbit PT0   = def_s_bit( IP, 1);
-sbit PX0   = def_s_bit( IP, 0);
+/*  sbit PPC  = IP^6;*/
+sbit PT2  = IP^5;
+sbit PS   = IP^4;
+sbit PT1  = IP^3;
+sbit PX1  = IP^2;
+sbit PT0  = IP^1;
+sbit PX0  = IP^0;
 
 /*  P3  */
-sbit RD    = def_s_bit( P3, 7);
-sbit WR    = def_s_bit( P3, 6);
-sbit T1    = def_s_bit( P3, 5);
-sbit T0    = def_s_bit( P3, 4);
-sbit INT1  = def_s_bit( P3, 3);
-sbit INT0  = def_s_bit( P3, 2);
-sbit TXD   = def_s_bit( P3, 1);
-sbit RXD   = def_s_bit( P3, 0);
+sbit RD   = P3^7;
+sbit WR   = P3^6;
+sbit T1   = P3^5;
+sbit T0   = P3^4;
+sbit INT1 = P3^3;
+sbit INT0 = P3^2;
+sbit TXD  = P3^1;
+sbit RXD  = P3^0;
 
 /*  SCON  */
-sbit SM0   = def_s_bit( SCON, 7);
-sbit FE    = def_s_bit( SCON, 7);
-sbit SM1   = def_s_bit( SCON, 6);
-sbit SM2   = def_s_bit( SCON, 5);
-sbit REN   = def_s_bit( SCON, 4);
-sbit TB8   = def_s_bit( SCON, 3);
-sbit RB8   = def_s_bit( SCON, 2);
-sbit TI    = def_s_bit( SCON, 1);
-sbit RI    = def_s_bit( SCON, 0);
+sbit SM0  = SCON^7; // alternatively "FE"
+sbit FE   = SCON^7;
+sbit SM1  = SCON^6;
+sbit SM2  = SCON^5;
+sbit REN  = SCON^4;
+sbit TB8  = SCON^3;
+sbit RB8  = SCON^2;
+sbit TI   = SCON^1;
+sbit RI   = SCON^0;
              
 /*  P1  */
 /* PCA
-sbit CEX4  = def_s_bit( P1, 7);
-sbit CEX3  = def_s_bit( P1, 6);
-sbit CEX2  = def_s_bit( P1, 5);
-sbit CEX1  = def_s_bit( P1, 4);
-sbit CEX0  = def_s_bit( P1, 3);
-sbit ECI   = def_s_bit( P1, 2);
+sbit CEX4 = P1^7;
+sbit CEX3 = P1^6;
+sbit CEX2 = P1^5;
+sbit CEX1 = P1^4;
+sbit CEX0 = P1^3;
+sbit ECI  = P1^2;
 */
 
-sbit T2EX  = def_s_bit( P1, 1);
-sbit T2    = def_s_bit( P1, 0);
+sbit T2EX = P1^1;
+sbit T2   = P1^0;
 
 /*  T2CON  */
-sbit TF2    = def_s_bit( T2CON, 7);
-sbit EXF2   = def_s_bit( T2CON, 6);
-sbit RCLK   = def_s_bit( T2CON, 5);
-sbit TCLK   = def_s_bit( T2CON, 4);
-sbit EXEN2  = def_s_bit( T2CON, 3);
-sbit TR2    = def_s_bit( T2CON, 2);
-sbit C_T2   = def_s_bit( T2CON, 1);
-sbit CP_RL2 = def_s_bit( T2CON, 0);
+sbit TF2   = T2CON^7;
+sbit EXF2  = T2CON^6;
+sbit RCLK  = T2CON^5;
+sbit TCLK  = T2CON^4;
+sbit EXEN2 = T2CON^3;
+sbit TR2   = T2CON^2;
+sbit C_T2  = T2CON^1;
+sbit CP_RL2= T2CON^0;
 
 /*  CCON  */
 /*  PCA
-sbit CF     = def_s_bit( CCON, 7);
-sbit CR     = def_s_bit( CCON, 6);
+sbit CF    = CCON^7;
+sbit CR    = CCON^6;
 
-sbit CCF4   = def_s_bit( CCON, 4);
-sbit CCF3   = def_s_bit( CCON, 3);
-sbit CCF2   = def_s_bit( CCON, 2);
-sbit CCF1   = def_s_bit( CCON, 1);
-sbit CCF0   = def_s_bit( CCON, 0);
+sbit CCF4  = CCON^4;
+sbit CCF3  = CCON^3;
+sbit CCF2  = CCON^2;
+sbit CCF1  = CCON^1;
+sbit CCF0  = CCON^0;
 */
 
 /////////////////////////////////////////////////

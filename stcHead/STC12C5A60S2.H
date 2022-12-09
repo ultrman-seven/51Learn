@@ -1,12 +1,8 @@
-#ifndef __STC12C5A60S2_H_
-#define __STC12C5A60S2_H_
+#ifndef __STC12C5A60S2_H__
+#define __STC12C5A60S2_H__
 
 /////////////////////////////////////////////////
-#ifndef __VS_CODE_
-#define def_s_bit(_r, _bit) ((_r) ^ (_bit))
-#else
-#define def_s_bit(_r, _bit) (0)
-#endif
+
 //--------------------------------------------------------------------------------
 //新一代 1T 8051系列 单片机内核特殊功能寄存器 C51 Core SFRs
 //                                          7     6      5       4     3    2    1     0   Reset Value
@@ -14,14 +10,14 @@ sfr ACC  = 0xE0; //Accumulator                                                  
 sfr B    = 0xF0; //B Register                                                               0000,0000
 sfr PSW  = 0xD0; //Program Status Word      CY    AC    F0    RS1   RS0    OV    F1    P    0000,0000
 //-----------------------------------
-sbit CY   = def_s_bit( PSW, 7);
-sbit AC   = def_s_bit( PSW, 6);
-sbit F0   = def_s_bit( PSW, 5);
-sbit RS1  = def_s_bit( PSW, 4);
-sbit RS0  = def_s_bit( PSW, 3);
-sbit OV   = def_s_bit( PSW, 2);
-sbit F1   = def_s_bit( PSW, 1);
-sbit P    = def_s_bit( PSW, 0);
+sbit CY  = PSW^7;
+sbit AC  = PSW^6;
+sbit F0  = PSW^5;
+sbit RS1 = PSW^4;
+sbit RS0 = PSW^3;
+sbit OV  = PSW^2;
+sbit F1  = PSW^1;
+sbit P   = PSW^0;
 //-----------------------------------
 sfr SP   = 0x81; //Stack Pointer                                                            0000,0111
 sfr DPL  = 0x82; //Data Pointer Low Byte                                                    0000,0000
@@ -102,28 +98,28 @@ RWS2,RWS1,RWS0:
 //                                           7     6     5    4     3    2    1    0   Reset Value
 sfr IE      = 0xA8;  //中断控制寄存器        EA  ELVD  EADC   ES   ET1  EX1  ET0  EX0  0x00,0000
 //-----------------------
-sbit EA        = def_s_bit( IE, 7);
-sbit ELVD      = def_s_bit( IE, 6);
-sbit EADC      = def_s_bit( IE, 5);
-sbit ES        = def_s_bit( IE, 4);
-sbit ET1       = def_s_bit( IE, 3);
-sbit EX1       = def_s_bit( IE, 2);
-sbit ET0       = def_s_bit( IE, 1);
-sbit EX0       = def_s_bit( IE, 0);
+sbit EA       = IE^7;
+sbit ELVD     = IE^6; //低压监测中断允许位
+sbit EADC     = IE^5; //ADC 中断允许位
+sbit ES       = IE^4;
+sbit ET1      = IE^3;
+sbit EX1      = IE^2;
+sbit ET0      = IE^1;
+sbit EX0      = IE^0;
 //-----------------------
 sfr IE2       = 0xAF;  //Auxiliary Interrupt   -     -     -    -     -    -  ESPI  ES2  0000,0000B
 //-----------------------
 //                                          7     6     5    4    3    2    1    0    Reset Value
 sfr IP      = 0xB8; //中断优先级低位      PPCA  PLVD  PADC  PS   PT1  PX1  PT0  PX0   0000,0000
 //--------
-sbit PPCA      = def_s_bit( IP, 7);
-sbit PLVD      = def_s_bit( IP, 6);
-sbit PADC      = def_s_bit( IP, 5);
-sbit PS        = def_s_bit( IP, 4);
-sbit PT1       = def_s_bit( IP, 3);
-sbit PX1       = def_s_bit( IP, 2);
-sbit PT0       = def_s_bit( IP, 1);
-sbit PX0       = def_s_bit( IP, 0);
+sbit PPCA     = IP^7;  //PCA 模块中断优先级
+sbit PLVD     = IP^6;  //低压监测中断优先级
+sbit PADC     = IP^5;  //ADC 中断优先级
+sbit PS       = IP^4;
+sbit PT1      = IP^3;
+sbit PX1      = IP^2;
+sbit PT0      = IP^1;
+sbit PX0      = IP^0;
 //-----------------------
 //                                         7      6      5     4     3     2     1     0    Reset Value
 sfr IPH   = 0xB7; //中断优先级高位       PPCAH  PLVDH  PADCH  PSH  PT1H  PX1H  PT0H  PX0H   0000,0000
@@ -133,69 +129,69 @@ sfr IPH2  = 0xB6; //                       -      -      -     -     -     -   P
 //新一代 1T 8051系列 单片机I/O 口特殊功能寄存器
 //                                      7     6     5     4     3     2     1     0         Reset Value
 sfr P0   = 0x80; //8 bitPort0          P0.7  P0.6  P0.5  P0.4  P0.3  P0.2  P0.1  P0.0       1111,1111
-sbit P00  = def_s_bit( P0, 0);
-sbit P01  = def_s_bit( P0, 1);
-sbit P02  = def_s_bit( P0, 2);
-sbit P03  = def_s_bit( P0, 3);
-sbit P04  = def_s_bit( P0, 4);
-sbit P05  = def_s_bit( P0, 5);
-sbit P06  = def_s_bit( P0, 6);
-sbit P07  = def_s_bit( P0, 7);
+sbit P00 = P0^0;
+sbit P01 = P0^1;
+sbit P02 = P0^2;
+sbit P03 = P0^3;
+sbit P04 = P0^4;
+sbit P05 = P0^5;
+sbit P06 = P0^6;
+sbit P07 = P0^7;
 sfr P0M0 = 0x94; //                                                                         0000,0000
 sfr P0M1 = 0x93; //                                                                         0000,0000
 sfr P1   = 0x90; //8 bitPort1          P1.7  P1.6  P1.5  P1.4  P1.3  P1.2  P1.1  P1.0       1111,1111
-sbit P10  = def_s_bit( P1, 0);
-sbit P11  = def_s_bit( P1, 1);
-sbit P12  = def_s_bit( P1, 2);
-sbit P13  = def_s_bit( P1, 3);
-sbit P14  = def_s_bit( P1, 4);
-sbit P15  = def_s_bit( P1, 5);
-sbit P16  = def_s_bit( P1, 6);
-sbit P17  = def_s_bit( P1, 7);
+sbit P10 = P1^0;
+sbit P11 = P1^1;
+sbit P12 = P1^2;
+sbit P13 = P1^3;
+sbit P14 = P1^4;
+sbit P15 = P1^5;
+sbit P16 = P1^6;
+sbit P17 = P1^7;
 sfr P1M0 = 0x92; //                                                                         0000,0000
 sfr P1M1 = 0x91; //                                                                         0000,0000
 sfr P1ASF = 0x9D; //P1 analog special function
 sfr P2   = 0xA0; //8 bitPort2          P2.7  P2.6  P2.5  P2.4  P2.3  P2.2  P2.1  P2.0       1111,1111
-sbit P20  = def_s_bit( P2, 0);
-sbit P21  = def_s_bit( P2, 1);
-sbit P22  = def_s_bit( P2, 2);
-sbit P23  = def_s_bit( P2, 3);
-sbit P24  = def_s_bit( P2, 4);
-sbit P25  = def_s_bit( P2, 5);
-sbit P26  = def_s_bit( P2, 6);
-sbit P27  = def_s_bit( P2, 7);
+sbit P20 = P2^0;
+sbit P21 = P2^1;
+sbit P22 = P2^2;
+sbit P23 = P2^3;
+sbit P24 = P2^4;
+sbit P25 = P2^5;
+sbit P26 = P2^6;
+sbit P27 = P2^7;
 sfr P2M0 = 0x96; //                                                                         0000,0000
 sfr P2M1 = 0x95; //                                                                         0000,0000
 sfr P3   = 0xB0; //8 bitPort3          P3.7  P3.6  P3.5  P3.4  P3.3  P3.2  P3.1  P3.0       1111,1111
-sbit P30  = def_s_bit( P3, 0);
-sbit P31  = def_s_bit( P3, 1);
-sbit P32  = def_s_bit( P3, 2);
-sbit P33  = def_s_bit( P3, 3);
-sbit P34  = def_s_bit( P3, 4);
-sbit P35  = def_s_bit( P3, 5);
-sbit P36  = def_s_bit( P3, 6);
-sbit P37  = def_s_bit( P3, 7);
+sbit P30 = P3^0;
+sbit P31 = P3^1;
+sbit P32 = P3^2;
+sbit P33 = P3^3;
+sbit P34 = P3^4;
+sbit P35 = P3^5;
+sbit P36 = P3^6;
+sbit P37 = P3^7;
 sfr P3M0 = 0xB2; //                                                                         0000,0000
 sfr P3M1 = 0xB1; //                                                                         0000,0000
 sfr P4   = 0xC0; //8 bitPort4          P4.7  P4.6  P4.5  P4.4  P4.3  P4.2  P4.1  P4.0       1111,1111
-sbit P40  = def_s_bit( P4, 0);
-sbit P41  = def_s_bit( P4, 1);
-sbit P42  = def_s_bit( P4, 2);
-sbit P43  = def_s_bit( P4, 3);
-sbit P44  = def_s_bit( P4, 4);
-sbit P45  = def_s_bit( P4, 5);
-sbit P46  = def_s_bit( P4, 6);
-sbit P47  = def_s_bit( P4, 7);
+sbit P40 = P4^0;
+sbit P41 = P4^1;
+sbit P42 = P4^2;
+sbit P43 = P4^3;
+sbit P44 = P4^4;
+sbit P45 = P4^5;
+sbit P46 = P4^6;
+sbit P47 = P4^7;
 sfr P4M0 = 0xB4; //                                                                         0000,0000
 sfr P4M1 = 0xB3; //                                                                         0000,0000
 //                                      7      6         5         4      3     2     1     0     Reset Value
 sfr P4SW = 0xBB; //Port-4 switch        -   LVD_P4.6  ALE_P4.5  NA_P4.4   -     -     -     -       x000,xxxx
 
 sfr P5   = 0xC8; //8 bitPort5           -     -       -      -    P5.3  P5.2  P5.1  P5.0    xxxx,1111
-sbit P50  = def_s_bit( P5, 0);
-sbit P51  = def_s_bit( P5, 1);
-sbit P52  = def_s_bit( P5, 2);
-sbit P53  = def_s_bit( P5, 3);
+sbit P50 = P5^0;
+sbit P51 = P5^1;
+sbit P52 = P5^2;
+sbit P53 = P5^3;
 sfr P5M0 = 0xCA; //                                                                         0000,0000
 sfr P5M1 = 0xC9; //                                                                         0000,0000
 //--------------------------------------------------------------------------------
@@ -203,14 +199,14 @@ sfr P5M1 = 0xC9; //                                                             
 //                                          7     6     5     4     3     2     1     0     Reset Value
 sfr TCON = 0x88; //T0/T1 Control           TF1   TR1   TF0   TR0   IE1   IT1   IE0   IT0    0000,0000
 //-----------------------------------
-sbit TF1  = def_s_bit( TCON, 7);
-sbit TR1  = def_s_bit( TCON, 6);
-sbit TF0  = def_s_bit( TCON, 5);
-sbit TR0  = def_s_bit( TCON, 4);
-sbit IE1  = def_s_bit( TCON, 3);
-sbit IT1  = def_s_bit( TCON, 2);
-sbit IE0  = def_s_bit( TCON, 1);
-sbit IT0  = def_s_bit( TCON, 0);
+sbit TF1 = TCON^7;
+sbit TR1 = TCON^6;
+sbit TF0 = TCON^5;
+sbit TR0 = TCON^4;
+sbit IE1 = TCON^3;
+sbit IT1 = TCON^2;
+sbit IE0 = TCON^1;
+sbit IT0 = TCON^0;
 //-----------------------------------
 sfr TMOD = 0x89; //T0/T1 Modes             GATE1 C/T1  M1_1  M1_0  GATE0 C/T0  M0_1  M0_0   0000,0000
 sfr TL0  = 0x8A; //T0 Low Byte                                                              0000,0000
@@ -222,14 +218,14 @@ sfr TH1  = 0x8D; //T1 High Byte                                                 
 //                                          7     6     5     4     3     2     1     0     Reset Value
 sfr SCON = 0x98; //Serial Control         SM0/FE SM1   SM2   REN   TB8   RB8    TI    RI    0000,0000
 //-----------------------------------
-sbit SM0  = def_s_bit( SCON, 7);
-sbit SM1  = def_s_bit( SCON, 6);
-sbit SM2  = def_s_bit( SCON, 5);
-sbit REN  = def_s_bit( SCON, 4);
-sbit TB8  = def_s_bit( SCON, 3);
-sbit RB8  = def_s_bit( SCON, 2);
-sbit TI   = def_s_bit( SCON, 1);
-sbit RI   = def_s_bit( SCON, 0);
+sbit SM0 = SCON^7;  //SM0/FE
+sbit SM1 = SCON^6;
+sbit SM2 = SCON^5;
+sbit REN = SCON^4;
+sbit TB8 = SCON^3;
+sbit RB8 = SCON^2;
+sbit TI  = SCON^1;
+sbit RI  = SCON^0;
 //-----------------------------------
 sfr SBUF = 0x99; //Serial Data Buffer                                                     xxxx,xxxx
 sfr SADEN = 0xB9; //Slave Address Mask                                                    0000,0000
@@ -251,12 +247,12 @@ sfr WDT_CONTR = 0xC1; //Watch-Dog-Timer Control register
 //                                         7     6     5     4     3     2     1     0     Reset Value
 sfr CCON   = 0xD8;   //PCA 控制寄存器。    CF    CR    -     -     -     -    CCF1  CCF0   00xx,xx00
 //-----------------------
-sbit CF      = def_s_bit( CCON, 7);
-sbit CR      = def_s_bit( CCON, 6);
+sbit CF     = CCON^7; //PCA计数器溢出标志,由硬件或软件置位,必须由软件清0。
+sbit CR     = CCON^6; //1:允许 PCA 计数器计数, 必须由软件清0。
 //-
 //-
-sbit CCF1    = def_s_bit( CCON, 1);
-sbit CCF0    = def_s_bit( CCON, 0);
+sbit CCF1   = CCON^1; //PCA 模块1 中断标志, 由硬件置位, 必须由软件清0。
+sbit CCF0   = CCON^0; //PCA 模块0 中断标志, 由硬件置位, 必须由软件清0。
 //-----------------------
 sfr CMOD  = 0xD9; //PCA 工作模式寄存器。   CIDL   -     -     -   CPS2   CPS1  CPS0  ECF   0xxx,x000
 /*

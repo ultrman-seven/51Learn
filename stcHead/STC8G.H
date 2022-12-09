@@ -1,23 +1,19 @@
-#ifndef     __STC8G_H_
-#define     __STC8G_H_
+#ifndef     __STC8G_H__
+#define     __STC8G_H__
 
 /////////////////////////////////////////////////
-#ifndef __VS_CODE_
-#define def_s_bit(_r, _bit) ((_r) ^ (_bit))
-#else
-#define def_s_bit(_r, _bit) (0)
-#endif
+
 //包含本头文件后,不用另外再包含"REG51.H"
 
 sfr         P0          =           0x80;
-sbit        P00          = def_s_bit(           P0, 0);
-sbit        P01          = def_s_bit(           P0, 1);
-sbit        P02          = def_s_bit(           P0, 2);
-sbit        P03          = def_s_bit(           P0, 3);
-sbit        P04          = def_s_bit(           P0, 4);
-sbit        P05          = def_s_bit(           P0, 5);
-sbit        P06          = def_s_bit(           P0, 6);
-sbit        P07          = def_s_bit(           P0, 7);
+sbit        P00         =           P0^0;
+sbit        P01         =           P0^1;
+sbit        P02         =           P0^2;
+sbit        P03         =           P0^3;
+sbit        P04         =           P0^4;
+sbit        P05         =           P0^5;
+sbit        P06         =           P0^6;
+sbit        P07         =           P0^7;
 sfr         SP          =           0x81;
 sfr         DPL         =           0x82;
 sfr         DPH         =           0x83;
@@ -25,14 +21,14 @@ sfr         S4CON       =           0x84;
 sfr         S4BUF       =           0x85;
 sfr         PCON        =           0x87;
 sfr         TCON        =           0x88;
-sbit        TF1          = def_s_bit(           TCON, 7);
-sbit        TR1          = def_s_bit(           TCON, 6);
-sbit        TF0          = def_s_bit(           TCON, 5);
-sbit        TR0          = def_s_bit(           TCON, 4);
-sbit        IE1          = def_s_bit(           TCON, 3);
-sbit        IT1          = def_s_bit(           TCON, 2);
-sbit        IE0          = def_s_bit(           TCON, 1);
-sbit        IT0          = def_s_bit(           TCON, 0);
+sbit        TF1         =           TCON^7;
+sbit        TR1         =           TCON^6;
+sbit        TF0         =           TCON^5;
+sbit        TR0         =           TCON^4;
+sbit        IE1         =           TCON^3;
+sbit        IT1         =           TCON^2;
+sbit        IE0         =           TCON^1;
+sbit        IT0         =           TCON^0;
 sfr         TMOD        =           0x89;
 sfr         TL0         =           0x8A;
 sfr         TL1         =           0x8B;
@@ -41,14 +37,14 @@ sfr         TH1         =           0x8D;
 sfr         AUXR        =           0x8E;
 sfr         INTCLKO     =           0x8F;
 sfr         P1          =           0x90;
-sbit        P10          = def_s_bit(           P1, 0);
-sbit        P11          = def_s_bit(           P1, 1);
-sbit        P12          = def_s_bit(           P1, 2);
-sbit        P13          = def_s_bit(           P1, 3);
-sbit        P14          = def_s_bit(           P1, 4);
-sbit        P15          = def_s_bit(           P1, 5);
-sbit        P16          = def_s_bit(           P1, 6);
-sbit        P17          = def_s_bit(           P1, 7);
+sbit        P10         =           P1^0;
+sbit        P11         =           P1^1;
+sbit        P12         =           P1^2;
+sbit        P13         =           P1^3;
+sbit        P14         =           P1^4;
+sbit        P15         =           P1^5;
+sbit        P16         =           P1^6;
+sbit        P17         =           P1^7;
 sfr         P1M1        =           0x91;
 sfr         P1M0        =           0x92;
 sfr         P0M1        =           0x93;
@@ -56,14 +52,14 @@ sfr         P0M0        =           0x94;
 sfr         P2M1        =           0x95;
 sfr         P2M0        =           0x96;
 sfr         SCON        =           0x98;
-sbit        SM0          = def_s_bit(           SCON, 7);
-sbit        SM1          = def_s_bit(           SCON, 6);
-sbit        SM2          = def_s_bit(           SCON, 5);
-sbit        REN          = def_s_bit(           SCON, 4);
-sbit        TB8          = def_s_bit(           SCON, 3);
-sbit        RB8          = def_s_bit(           SCON, 2);
-sbit        TI           = def_s_bit(           SCON, 1);
-sbit        RI           = def_s_bit(           SCON, 0);
+sbit        SM0         =           SCON^7;
+sbit        SM1         =           SCON^6;
+sbit        SM2         =           SCON^5;
+sbit        REN         =           SCON^4;
+sbit        TB8         =           SCON^3;
+sbit        RB8         =           SCON^2;
+sbit        TI          =           SCON^1;
+sbit        RI          =           SCON^0;
 sfr         SBUF        =           0x99;
 sfr         S2CON       =           0x9A;
 sfr         S2BUF       =           0x9B;
@@ -71,24 +67,24 @@ sfr         IRCBAND     =           0x9D;
 sfr         LIRTRIM     =           0x9E;
 sfr         IRTRIM      =           0x9F;
 sfr         P2          =           0xA0;
-sbit        P20          = def_s_bit(           P2, 0);
-sbit        P21          = def_s_bit(           P2, 1);
-sbit        P22          = def_s_bit(           P2, 2);
-sbit        P23          = def_s_bit(           P2, 3);
-sbit        P24          = def_s_bit(           P2, 4);
-sbit        P25          = def_s_bit(           P2, 5);
-sbit        P26          = def_s_bit(           P2, 6);
-sbit        P27          = def_s_bit(           P2, 7);
+sbit        P20         =           P2^0;
+sbit        P21         =           P2^1;
+sbit        P22         =           P2^2;
+sbit        P23         =           P2^3;
+sbit        P24         =           P2^4;
+sbit        P25         =           P2^5;
+sbit        P26         =           P2^6;
+sbit        P27         =           P2^7;
 sfr         P_SW1       =           0xA2;
 sfr         IE          =           0xA8;
-sbit        EA           = def_s_bit(           IE, 7);
-sbit        ELVD         = def_s_bit(           IE, 6);
-sbit        EADC         = def_s_bit(           IE, 5);
-sbit        ES           = def_s_bit(           IE, 4);
-sbit        ET1          = def_s_bit(           IE, 3);
-sbit        EX1          = def_s_bit(           IE, 2);
-sbit        ET0          = def_s_bit(           IE, 1);
-sbit        EX0          = def_s_bit(           IE, 0);
+sbit        EA          =           IE^7;
+sbit        ELVD        =           IE^6;
+sbit        EADC        =           IE^5;
+sbit        ES          =           IE^4;
+sbit        ET1         =           IE^3;
+sbit        EX1         =           IE^2;
+sbit        ET0         =           IE^1;
+sbit        EX0         =           IE^0;
 sfr         SADDR       =           0xA9;
 sfr         WKTCL       =           0xAA;
 sfr         WKTCH       =           0xAB;
@@ -97,14 +93,14 @@ sfr         S3BUF       =           0xAD;
 sfr         TA          =           0xAE;
 sfr         IE2         =           0xAF;
 sfr         P3          =           0xB0;
-sbit        P30          = def_s_bit(           P3, 0);
-sbit        P31          = def_s_bit(           P3, 1);
-sbit        P32          = def_s_bit(           P3, 2);
-sbit        P33          = def_s_bit(           P3, 3);
-sbit        P34          = def_s_bit(           P3, 4);
-sbit        P35          = def_s_bit(           P3, 5);
-sbit        P36          = def_s_bit(           P3, 6);
-sbit        P37          = def_s_bit(           P3, 7);
+sbit        P30         =           P3^0;
+sbit        P31         =           P3^1;
+sbit        P32         =           P3^2;
+sbit        P33         =           P3^3;
+sbit        P34         =           P3^4;
+sbit        P35         =           P3^5;
+sbit        P36         =           P3^6;
+sbit        P37         =           P3^7;
 sfr         P3M1        =           0xB1;
 sfr         P3M0        =           0xB2;
 sfr         P4M1        =           0xB3;
@@ -113,28 +109,28 @@ sfr         IP2         =           0xB5;
 sfr         IP2H        =           0xB6;
 sfr         IPH         =           0xB7;
 sfr         IP          =           0xB8;
-sbit        PPCA         = def_s_bit(           IP, 7);
-sbit        PLVD         = def_s_bit(           IP, 6);
-sbit        PADC         = def_s_bit(           IP, 5);
-sbit        PS           = def_s_bit(           IP, 4);
-sbit        PT1          = def_s_bit(           IP, 3);
-sbit        PX1          = def_s_bit(           IP, 2);
-sbit        PT0          = def_s_bit(           IP, 1);
-sbit        PX0          = def_s_bit(           IP, 0);
+sbit        PPCA        =           IP^7;
+sbit        PLVD        =           IP^6;
+sbit        PADC        =           IP^5;
+sbit        PS          =           IP^4;
+sbit        PT1         =           IP^3;
+sbit        PX1         =           IP^2;
+sbit        PT0         =           IP^1;
+sbit        PX0         =           IP^0;
 sfr         SADEN       =           0xB9;
 sfr         P_SW2       =           0xBA;
 sfr         ADC_CONTR   =           0xBC;
 sfr         ADC_RES     =           0xBD;
 sfr         ADC_RESL    =           0xBE;
 sfr         P4          =           0xC0;
-sbit        P40          = def_s_bit(           P4, 0);
-sbit        P41          = def_s_bit(           P4, 1);
-sbit        P42          = def_s_bit(           P4, 2);
-sbit        P43          = def_s_bit(           P4, 3);
-sbit        P44          = def_s_bit(           P4, 4);
-sbit        P45          = def_s_bit(           P4, 5);
-sbit        P46          = def_s_bit(           P4, 6);
-sbit        P47          = def_s_bit(           P4, 7);
+sbit        P40         =           P4^0;
+sbit        P41         =           P4^1;
+sbit        P42         =           P4^2;
+sbit        P43         =           P4^3;
+sbit        P44         =           P4^4;
+sbit        P45         =           P4^5;
+sbit        P46         =           P4^6;
+sbit        P47         =           P4^7;
 sfr         WDT_CONTR   =           0xC1;
 sfr         IAP_DATA    =           0xC2;
 sfr         IAP_ADDRH   =           0xC3;
@@ -143,14 +139,14 @@ sfr         IAP_CMD     =           0xC5;
 sfr         IAP_TRIG    =           0xC6;
 sfr         IAP_CONTR   =           0xC7;
 sfr         P5          =           0xC8;
-sbit        P50          = def_s_bit(           P5, 0);
-sbit        P51          = def_s_bit(           P5, 1);
-sbit        P52          = def_s_bit(           P5, 2);
-sbit        P53          = def_s_bit(           P5, 3);
-sbit        P54          = def_s_bit(           P5, 4);
-sbit        P55          = def_s_bit(           P5, 5);
-sbit        P56          = def_s_bit(           P5, 6);
-sbit        P57          = def_s_bit(           P5, 7);
+sbit        P50         =           P5^0;
+sbit        P51         =           P5^1;
+sbit        P52         =           P5^2;
+sbit        P53         =           P5^3;
+sbit        P54         =           P5^4;
+sbit        P55         =           P5^5;
+sbit        P56         =           P5^6;
+sbit        P57         =           P5^7;
 sfr         P5M1        =           0xC9;
 sfr         P5M0        =           0xCA;
 sfr         P6M1        =           0xcb;
@@ -159,14 +155,14 @@ sfr         SPSTAT      =           0xCD;
 sfr         SPCTL       =           0xCE;
 sfr         SPDAT       =           0xCF;
 sfr         PSW         =           0xD0;
-sbit        CY           = def_s_bit(           PSW, 7);
-sbit        AC           = def_s_bit(           PSW, 6);
-sbit        F0           = def_s_bit(           PSW, 5);
-sbit        RS1          = def_s_bit(           PSW, 4);
-sbit        RS0          = def_s_bit(           PSW, 3);
-sbit        OV           = def_s_bit(           PSW, 2);
-sbit        F1           = def_s_bit(           PSW, 1);
-sbit        P            = def_s_bit(           PSW, 0);
+sbit        CY          =           PSW^7;
+sbit        AC          =           PSW^6;
+sbit        F0          =           PSW^5;
+sbit        RS1         =           PSW^4;
+sbit        RS0         =           PSW^3;
+sbit        OV          =           PSW^2;
+sbit        F1          =           PSW^1;
+sbit        P           =           PSW^0;
 sfr         T4T3M       =           0xD1;
 sfr         T4H         =           0xD2;
 sfr         T4L         =           0xD3;
@@ -175,11 +171,11 @@ sfr         T3L         =           0xD5;
 sfr         T2H         =           0xD6;
 sfr         T2L         =           0xD7;
 sfr         CCON        =           0xD8;
-sbit        CF           = def_s_bit(           CCON, 7);
-sbit        CR           = def_s_bit(           CCON, 6);
-sbit        CCF2         = def_s_bit(           CCON, 2);
-sbit        CCF1         = def_s_bit(           CCON, 1);
-sbit        CCF0         = def_s_bit(           CCON, 0);
+sbit        CF          =           CCON^7;
+sbit        CR          =           CCON^6;
+sbit        CCF2        =           CCON^2;
+sbit        CCF1        =           CCON^1;
+sbit        CCF0        =           CCON^0;
 sfr         CMOD        =           0xD9;
 sfr         CCAPM0      =           0xDA;
 sfr         CCAPM1      =           0xDB;
@@ -195,6 +191,14 @@ sfr         DPH1        =           0xE5;
 sfr         CMPCR1      =           0xE6;
 sfr         CMPCR2      =           0xE7;
 sfr         P6          =           0xe8;
+sbit        P60         =           P6^0;
+sbit        P61         =           P6^1;
+sbit        P62         =           P6^2;
+sbit        P63         =           P6^3;
+sbit        P64         =           P6^4;
+sbit        P65         =           P6^5;
+sbit        P66         =           P6^6;
+sbit        P67         =           P6^7;
 sfr         CL          =           0xE9;
 sfr         CCAP0L      =           0xEA;
 sfr         CCAP1L      =           0xEB;
@@ -210,6 +214,14 @@ sfr         IAP_TPS     =           0xF5;
 sfr         PWMCFG01    =           0xF6;
 sfr         PWMCFG23    =           0xF7;
 sfr         P7          =           0xf8;
+sbit        P70         =           P7^0;
+sbit        P71         =           P7^1;
+sbit        P72         =           P7^2;
+sbit        P73         =           P7^3;
+sbit        P74         =           P7^4;
+sbit        P75         =           P7^5;
+sbit        P76         =           P7^6;
+sbit        P77         =           P7^7;
 sfr         CH          =           0xF9;
 sfr         CCAP0H      =           0xFA;
 sfr         CCAP1H      =           0xFB;
@@ -224,13 +236,227 @@ sfr         RSTCFG      =           0xFF;
 //FF00H-FFFFH
 /////////////////////////////////////////////////
 
-
+#define     PWM0C       (*(unsigned int  volatile xdata *)0xff00)
+#define     PWM0CH      (*(unsigned char volatile xdata *)0xff00)
+#define     PWM0CL      (*(unsigned char volatile xdata *)0xff01)
+#define     PWM0CKS     (*(unsigned char volatile xdata *)0xff02)
+#define     PWM0TADC    (*(unsigned int  volatile xdata *)0xff03)
+#define     PWM0TADCH   (*(unsigned char volatile xdata *)0xff03)
+#define     PWM0TADCL   (*(unsigned char volatile xdata *)0xff04)
+#define     PWM0IF      (*(unsigned char volatile xdata *)0xff05)
+#define     PWM0FDCR    (*(unsigned char volatile xdata *)0xff06)
+#define     PWM00T1     (*(unsigned int  volatile xdata *)0xff10)
+#define     PWM00T1L    (*(unsigned char volatile xdata *)0xff11)
+#define     PWM00T2     (*(unsigned int  volatile xdata *)0xff12)
+#define     PWM00T2H    (*(unsigned char volatile xdata *)0xff12)
+#define     PWM00T2L    (*(unsigned char volatile xdata *)0xff13)
+#define     PWM00CR     (*(unsigned char volatile xdata *)0xff14)
+#define     PWM00HLD    (*(unsigned char volatile xdata *)0xff15)
+#define     PWM01T1     (*(unsigned int  volatile xdata *)0xff18)
+#define     PWM01T1H    (*(unsigned char volatile xdata *)0xff18)
+#define     PWM01T1L    (*(unsigned char volatile xdata *)0xff19)
+#define     PWM01T2     (*(unsigned int  volatile xdata *)0xff1a)
+#define     PWM01T2H    (*(unsigned char volatile xdata *)0xff1a)
+#define     PWM01T2L    (*(unsigned char volatile xdata *)0xff1b)
+#define     PWM01CR     (*(unsigned char volatile xdata *)0xff1c)
+#define     PWM01HLD    (*(unsigned char volatile xdata *)0xff1d)
+#define     PWM02T1     (*(unsigned int  volatile xdata *)0xff20)
+#define     PWM02T1H    (*(unsigned char volatile xdata *)0xff20)
+#define     PWM02T1L    (*(unsigned char volatile xdata *)0xff21)
+#define     PWM02T2     (*(unsigned int  volatile xdata *)0xff22)
+#define     PWM02T2H    (*(unsigned char volatile xdata *)0xff22)
+#define     PWM02T2L    (*(unsigned char volatile xdata *)0xff23)
+#define     PWM02CR     (*(unsigned char volatile xdata *)0xff24)
+#define     PWM02HLD    (*(unsigned char volatile xdata *)0xff25)
+#define     PWM03T1     (*(unsigned int  volatile xdata *)0xff28)
+#define     PWM03T1H    (*(unsigned char volatile xdata *)0xff28)
+#define     PWM03T1L    (*(unsigned char volatile xdata *)0xff29)
+#define     PWM03T2     (*(unsigned int  volatile xdata *)0xff2a)
+#define     PWM03T2H    (*(unsigned char volatile xdata *)0xff2a)
+#define     PWM03T2L    (*(unsigned char volatile xdata *)0xff2b)
+#define     PWM03CR     (*(unsigned char volatile xdata *)0xff2c)
+#define     PWM03HLD    (*(unsigned char volatile xdata *)0xff2d)
+#define     PWM04T1     (*(unsigned int  volatile xdata *)0xff30)
+#define     PWM04T1H    (*(unsigned char volatile xdata *)0xff30)
+#define     PWM04T1L    (*(unsigned char volatile xdata *)0xff31)
+#define     PWM04T2     (*(unsigned int  volatile xdata *)0xff32)
+#define     PWM04T2H    (*(unsigned char volatile xdata *)0xff32)
+#define     PWM04T2L    (*(unsigned char volatile xdata *)0xff33)
+#define     PWM04CR     (*(unsigned char volatile xdata *)0xff34)
+#define     PWM04HLD    (*(unsigned char volatile xdata *)0xff35)
+#define     PWM05T1     (*(unsigned int  volatile xdata *)0xff38)
+#define     PWM05T1H    (*(unsigned char volatile xdata *)0xff38)
+#define     PWM05T1L    (*(unsigned char volatile xdata *)0xff39)
+#define     PWM05T2     (*(unsigned int  volatile xdata *)0xff3a)
+#define     PWM05T2H    (*(unsigned char volatile xdata *)0xff3a)
+#define     PWM05T2L    (*(unsigned char volatile xdata *)0xff3b)
+#define     PWM05CR     (*(unsigned char volatile xdata *)0xff3c)
+#define     PWM05HLD    (*(unsigned char volatile xdata *)0xff3d)
+#define     PWM06T1     (*(unsigned int  volatile xdata *)0xff40)
+#define     PWM06T1H    (*(unsigned char volatile xdata *)0xff40)
+#define     PWM06T1L    (*(unsigned char volatile xdata *)0xff41)
+#define     PWM06T2     (*(unsigned int  volatile xdata *)0xff42)
+#define     PWM06T2H    (*(unsigned char volatile xdata *)0xff42)
+#define     PWM06T2L    (*(unsigned char volatile xdata *)0xff43)
+#define     PWM06CR     (*(unsigned char volatile xdata *)0xff44)
+#define     PWM06HLD    (*(unsigned char volatile xdata *)0xff45)
+#define     PWM07T1     (*(unsigned int  volatile xdata *)0xff48)
+#define     PWM07T1H    (*(unsigned char volatile xdata *)0xff48)
+#define     PWM07T1L    (*(unsigned char volatile xdata *)0xff49)
+#define     PWM07T2     (*(unsigned int  volatile xdata *)0xff4a)
+#define     PWM07T2H    (*(unsigned char volatile xdata *)0xff4a)
+#define     PWM07T2L    (*(unsigned char volatile xdata *)0xff4b)
+#define     PWM07CR     (*(unsigned char volatile xdata *)0xff4c)
+#define     PWM07HLD    (*(unsigned char volatile xdata *)0xff4d)
+#define     PWM1C       (*(unsigned int  volatile xdata *)0xff50)
+#define     PWM1CH      (*(unsigned char volatile xdata *)0xff50)
+#define     PWM1CL      (*(unsigned char volatile xdata *)0xff51)
+#define     PWM1CKS     (*(unsigned char volatile xdata *)0xff52)
+#define     PWM1IF      (*(unsigned char volatile xdata *)0xff55)
+#define     PWM1FDCR    (*(unsigned char volatile xdata *)0xff56)
+#define     PWM10T1     (*(unsigned int  volatile xdata *)0xff60)
+#define     PWM10T1H    (*(unsigned char volatile xdata *)0xff60)
+#define     PWM10T1L    (*(unsigned char volatile xdata *)0xff61)
+#define     PWM10T2     (*(unsigned int  volatile xdata *)0xff62)
+#define     PWM10T2H    (*(unsigned char volatile xdata *)0xff62)
+#define     PWM10T2L    (*(unsigned char volatile xdata *)0xff63)
+#define     PWM10CR     (*(unsigned char volatile xdata *)0xff64)
+#define     PWM10HLD    (*(unsigned char volatile xdata *)0xff65)
+#define     PWM11T1     (*(unsigned int  volatile xdata *)0xff68)
+#define     PWM11T1H    (*(unsigned char volatile xdata *)0xff68)
+#define     PWM11T1L    (*(unsigned char volatile xdata *)0xff69)
+#define     PWM11T2     (*(unsigned int  volatile xdata *)0xff6a)
+#define     PWM11T2H    (*(unsigned char volatile xdata *)0xff6a)
+#define     PWM11T2L    (*(unsigned char volatile xdata *)0xff6b)
+#define     PWM11CR     (*(unsigned char volatile xdata *)0xff6c)
+#define     PWM11HLD    (*(unsigned char volatile xdata *)0xff6d)
+#define     PWM12T1     (*(unsigned int  volatile xdata *)0xff70)
+#define     PWM12T1H    (*(unsigned char volatile xdata *)0xff70)
+#define     PWM12T1L    (*(unsigned char volatile xdata *)0xff71)
+#define     PWM12T2     (*(unsigned int  volatile xdata *)0xff72)
+#define     PWM12T2H    (*(unsigned char volatile xdata *)0xff72)
+#define     PWM12T2L    (*(unsigned char volatile xdata *)0xff73)
+#define     PWM12CR     (*(unsigned char volatile xdata *)0xff74)
+#define     PWM12HLD    (*(unsigned char volatile xdata *)0xff75)
+#define     PWM13T1     (*(unsigned int  volatile xdata *)0xff78)
+#define     PWM13T1H    (*(unsigned char volatile xdata *)0xff78)
+#define     PWM13T1L    (*(unsigned char volatile xdata *)0xff79)
+#define     PWM13T2     (*(unsigned int  volatile xdata *)0xff7a)
+#define     PWM13T2H    (*(unsigned char volatile xdata *)0xff7a)
+#define     PWM13T2L    (*(unsigned char volatile xdata *)0xff7b)
+#define     PWM13CR     (*(unsigned char volatile xdata *)0xff7c)
+#define     PWM13HLD    (*(unsigned char volatile xdata *)0xff7d)
+#define     PWM14T1     (*(unsigned int  volatile xdata *)0xff80)
+#define     PWM14T1H    (*(unsigned char volatile xdata *)0xff80)
+#define     PWM14T1L    (*(unsigned char volatile xdata *)0xff81)
+#define     PWM14T2     (*(unsigned int  volatile xdata *)0xff82)
+#define     PWM14T2H    (*(unsigned char volatile xdata *)0xff82)
+#define     PWM14T2L    (*(unsigned char volatile xdata *)0xff83)
+#define     PWM14CR     (*(unsigned char volatile xdata *)0xff84)
+#define     PWM14HLD    (*(unsigned char volatile xdata *)0xff85)
+#define     PWM15T1     (*(unsigned int  volatile xdata *)0xff88)
+#define     PWM15T1H    (*(unsigned char volatile xdata *)0xff88)
+#define     PWM15T1L    (*(unsigned char volatile xdata *)0xff89)
+#define     PWM15T2     (*(unsigned int  volatile xdata *)0xff8a)
+#define     PWM15T2H    (*(unsigned char volatile xdata *)0xff8a)
+#define     PWM15T2L    (*(unsigned char volatile xdata *)0xff8b)
+#define     PWM15CR     (*(unsigned char volatile xdata *)0xff8c)
+#define     PWM15HLD    (*(unsigned char volatile xdata *)0xff8d)
+#define     PWM16T1     (*(unsigned int  volatile xdata *)0xff90)
+#define     PWM16T1H    (*(unsigned char volatile xdata *)0xff90)
+#define     PWM16T1L    (*(unsigned char volatile xdata *)0xff91)
+#define     PWM16T2     (*(unsigned int  volatile xdata *)0xff92)
+#define     PWM16T2H    (*(unsigned char volatile xdata *)0xff92)
+#define     PWM16T2L    (*(unsigned char volatile xdata *)0xff93)
+#define     PWM16CR     (*(unsigned char volatile xdata *)0xff94)
+#define     PWM16HLD    (*(unsigned char volatile xdata *)0xff95)
+#define     PWM17T1     (*(unsigned int  volatile xdata *)0xff98)
+#define     PWM17T1H    (*(unsigned char volatile xdata *)0xff98)
+#define     PWM17T1L    (*(unsigned char volatile xdata *)0xff99)
+#define     PWM17T2     (*(unsigned int  volatile xdata *)0xff9a)
+#define     PWM17T2H    (*(unsigned char volatile xdata *)0xff9a)
+#define     PWM17T2L    (*(unsigned char volatile xdata *)0xff9b)
+#define     PWM17CR     (*(unsigned char volatile xdata *)0xff9c)
+#define     PWM17HLD    (*(unsigned char volatile xdata *)0xff9d)
+#define     PWM2C       (*(unsigned int  volatile xdata *)0xffa0)
+#define     PWM2CH      (*(unsigned char volatile xdata *)0xffa0)
+#define     PWM2CL      (*(unsigned char volatile xdata *)0xffa1)
+#define     PWM2CKS     (*(unsigned char volatile xdata *)0xffa2)
+#define     PWM2TADC    (*(unsigned int  volatile xdata *)0xffa3)
+#define     PWM2TADCH   (*(unsigned char volatile xdata *)0xffa3)
+#define     PWM2TADCL   (*(unsigned char volatile xdata *)0xffa4)
+#define     PWM2IF      (*(unsigned char volatile xdata *)0xffa5)
+#define     PWM2FDCR    (*(unsigned char volatile xdata *)0xffa6)
+#define     PWM20T1     (*(unsigned int  volatile xdata *)0xffb0)
+#define     PWM20T1H    (*(unsigned char volatile xdata *)0xffb0)
+#define     PWM20T1L    (*(unsigned char volatile xdata *)0xffb1)
+#define     PWM20T2     (*(unsigned int  volatile xdata *)0xffb2)
+#define     PWM20T2H    (*(unsigned char volatile xdata *)0xffb2)
+#define     PWM20T2L    (*(unsigned char volatile xdata *)0xffb3)
+#define     PWM20CR     (*(unsigned char volatile xdata *)0xffb4)
+#define     PWM20HLD    (*(unsigned char volatile xdata *)0xffb5)
+#define     PWM21T1     (*(unsigned int  volatile xdata *)0xffb8)
+#define     PWM21T1H    (*(unsigned char volatile xdata *)0xffb8)
+#define     PWM21T1L    (*(unsigned char volatile xdata *)0xffb9)
+#define     PWM21T2     (*(unsigned int  volatile xdata *)0xffba)
+#define     PWM21T2H    (*(unsigned char volatile xdata *)0xffba)
+#define     PWM21T2L    (*(unsigned char volatile xdata *)0xffbb)
+#define     PWM21CR     (*(unsigned char volatile xdata *)0xffbc)
+#define     PWM21HLD    (*(unsigned char volatile xdata *)0xffbd)
+#define     PWM22T1     (*(unsigned int  volatile xdata *)0xffc0)
+#define     PWM22T1H    (*(unsigned char volatile xdata *)0xffc0)
+#define     PWM22T1L    (*(unsigned char volatile xdata *)0xffc1)
+#define     PWM22T2     (*(unsigned int  volatile xdata *)0xffc2)
+#define     PWM22T2H    (*(unsigned char volatile xdata *)0xffc2)
+#define     PWM22T2L    (*(unsigned char volatile xdata *)0xffc3)
+#define     PWM22CR     (*(unsigned char volatile xdata *)0xffc4)
+#define     PWM22HLD    (*(unsigned char volatile xdata *)0xffc5)
+#define     PWM23T1     (*(unsigned int  volatile xdata *)0xffc8)
+#define     PWM23T1H    (*(unsigned char volatile xdata *)0xffc8)
+#define     PWM23T1L    (*(unsigned char volatile xdata *)0xffc9)
+#define     PWM23T2     (*(unsigned int  volatile xdata *)0xffca)
+#define     PWM23T2H    (*(unsigned char volatile xdata *)0xffca)
+#define     PWM23T2L    (*(unsigned char volatile xdata *)0xffcb)
+#define     PWM23CR     (*(unsigned char volatile xdata *)0xffcc)
+#define     PWM23HLD    (*(unsigned char volatile xdata *)0xffcd)
+#define     PWM24T1     (*(unsigned int  volatile xdata *)0xffd0)
+#define     PWM24T1H    (*(unsigned char volatile xdata *)0xffd0)
+#define     PWM24T1L    (*(unsigned char volatile xdata *)0xffd1)
+#define     PWM24T2     (*(unsigned int  volatile xdata *)0xffd2)
+#define     PWM24T2H    (*(unsigned char volatile xdata *)0xffd2)
+#define     PWM24T2L    (*(unsigned char volatile xdata *)0xffd3)
+#define     PWM24CR     (*(unsigned char volatile xdata *)0xffd4)
+#define     PWM24HLD    (*(unsigned char volatile xdata *)0xffd5)
+#define     PWM25T1     (*(unsigned int  volatile xdata *)0xffd8)
+#define     PWM25T1H    (*(unsigned char volatile xdata *)0xffd8)
+#define     PWM25T1L    (*(unsigned char volatile xdata *)0xffd9)
+#define     PWM25T2     (*(unsigned int  volatile xdata *)0xffda)
+#define     PWM25T2H    (*(unsigned char volatile xdata *)0xffda)
+#define     PWM25T2L    (*(unsigned char volatile xdata *)0xffdb)
+#define     PWM25CR     (*(unsigned char volatile xdata *)0xffdc)
+#define     PWM25HLD    (*(unsigned char volatile xdata *)0xffdd)
+#define     PWM26T1     (*(unsigned int  volatile xdata *)0xffe0)
+#define     PWM26T1H    (*(unsigned char volatile xdata *)0xffe0)
+#define     PWM26T1L    (*(unsigned char volatile xdata *)0xffe1)
+#define     PWM26T2     (*(unsigned int  volatile xdata *)0xffe2)
+#define     PWM26T2H    (*(unsigned char volatile xdata *)0xffe2)
+#define     PWM26T2L    (*(unsigned char volatile xdata *)0xffe3)
+#define     PWM26CR     (*(unsigned char volatile xdata *)0xffe4)
+#define     PWM26HLD    (*(unsigned char volatile xdata *)0xffe5)
+#define     PWM27T1     (*(unsigned int  volatile xdata *)0xffe8)
+#define     PWM27T1H    (*(unsigned char volatile xdata *)0xffe8)
+#define     PWM27T1L    (*(unsigned char volatile xdata *)0xffe9)
+#define     PWM27T2     (*(unsigned int  volatile xdata *)0xffea)
+#define     PWM27T2H    (*(unsigned char volatile xdata *)0xffea)
+#define     PWM27T2L    (*(unsigned char volatile xdata *)0xffeb)
+#define     PWM27CR     (*(unsigned char volatile xdata *)0xffec)
+#define     PWM27HLD    (*(unsigned char volatile xdata *)0xffed)
 
 /////////////////////////////////////////////////
 //FE00H-FEFFH
 /////////////////////////////////////////////////
 
-#define     CKSEL       (*(unsigned char volatile xdata *)0xfe00)
+#define     CLKSEL      (*(unsigned char volatile xdata *)0xfe00)
 #define     CLKDIV      (*(unsigned char volatile xdata *)0xfe01)
 #define     HIRCCR      (*(unsigned char volatile xdata *)0xfe02)
 #define     XOSCCR      (*(unsigned char volatile xdata *)0xfe03)
@@ -317,170 +543,7 @@ sfr         RSTCFG      =           0xFF;
 #define     TM3PS       (*(unsigned char volatile xdata *)0xfea3)
 #define     TM4PS       (*(unsigned char volatile xdata *)0xfea4)
 #define     ADCTIM      (*(unsigned char volatile xdata *)0xfea8)
-
-#define     PWM0CH      (*(unsigned char volatile xdata *)0xff00)
-#define     PWM0CL      (*(unsigned char volatile xdata *)0xff01)
-#define     PWM0CKS     (*(unsigned char volatile xdata *)0xff02)
-#define     PWM0TADCH   (*(unsigned char volatile xdata *)0xff03)
-#define     PWM0TADCL   (*(unsigned char volatile xdata *)0xff04)
-#define     PWM0IF      (*(unsigned char volatile xdata *)0xff05)
-#define     PWM0FDCR    (*(unsigned char volatile xdata *)0xff06)
-#define     PWM00T1H    (*(unsigned char volatile xdata *)0xff10)
-#define     PWM00T1L    (*(unsigned char volatile xdata *)0xff11)
-#define     PWM00T2H    (*(unsigned char volatile xdata *)0xff12)
-#define     PWM00T2L    (*(unsigned char volatile xdata *)0xff13)
-#define     PWM00CR     (*(unsigned char volatile xdata *)0xff14)
-#define     PWM00HLD    (*(unsigned char volatile xdata *)0xff15)
-#define     PWM01T1H    (*(unsigned char volatile xdata *)0xff18)
-#define     PWM01T1L    (*(unsigned char volatile xdata *)0xff19)
-#define     PWM01T2H    (*(unsigned char volatile xdata *)0xff1a)
-#define     PWM01T2L    (*(unsigned char volatile xdata *)0xff1b)
-#define     PWM01CR     (*(unsigned char volatile xdata *)0xff1c)
-#define     PWM01HLD    (*(unsigned char volatile xdata *)0xff1d)
-#define     PWM02T1H    (*(unsigned char volatile xdata *)0xff20)
-#define     PWM02T1L    (*(unsigned char volatile xdata *)0xff21)
-#define     PWM02T2H    (*(unsigned char volatile xdata *)0xff22)
-#define     PWM02T2L    (*(unsigned char volatile xdata *)0xff23)
-#define     PWM02CR     (*(unsigned char volatile xdata *)0xff24)
-#define     PWM02HLD    (*(unsigned char volatile xdata *)0xff25)
-#define     PWM03T1H    (*(unsigned char volatile xdata *)0xff28)
-#define     PWM03T1L    (*(unsigned char volatile xdata *)0xff29)
-#define     PWM03T2H    (*(unsigned char volatile xdata *)0xff2a)
-#define     PWM03T2L    (*(unsigned char volatile xdata *)0xff2b)
-#define     PWM03CR     (*(unsigned char volatile xdata *)0xff2c)
-#define     PWM03HLD    (*(unsigned char volatile xdata *)0xff2d)
-#define     PWM04T1H    (*(unsigned char volatile xdata *)0xff30)
-#define     PWM04T1L    (*(unsigned char volatile xdata *)0xff31)
-#define     PWM04T2H    (*(unsigned char volatile xdata *)0xff32)
-#define     PWM04T2L    (*(unsigned char volatile xdata *)0xff33)
-#define     PWM04CR     (*(unsigned char volatile xdata *)0xff34)
-#define     PWM04HLD    (*(unsigned char volatile xdata *)0xff35)
-#define     PWM05T1H    (*(unsigned char volatile xdata *)0xff38)
-#define     PWM05T1L    (*(unsigned char volatile xdata *)0xff39)
-#define     PWM05T2H    (*(unsigned char volatile xdata *)0xff3a)
-#define     PWM05T2L    (*(unsigned char volatile xdata *)0xff3b)
-#define     PWM05CR     (*(unsigned char volatile xdata *)0xff3c)
-#define     PWM05HLD    (*(unsigned char volatile xdata *)0xff3d)
-#define     PWM06T1H    (*(unsigned char volatile xdata *)0xff40)
-#define     PWM06T1L    (*(unsigned char volatile xdata *)0xff41)
-#define     PWM06T2H    (*(unsigned char volatile xdata *)0xff42)
-#define     PWM06T2L    (*(unsigned char volatile xdata *)0xff43)
-#define     PWM06CR     (*(unsigned char volatile xdata *)0xff44)
-#define     PWM06HLD    (*(unsigned char volatile xdata *)0xff45)
-#define     PWM07T1H    (*(unsigned char volatile xdata *)0xff48)
-#define     PWM07T1L    (*(unsigned char volatile xdata *)0xff49)
-#define     PWM07T2H    (*(unsigned char volatile xdata *)0xff4a)
-#define     PWM07T2L    (*(unsigned char volatile xdata *)0xff4b)
-#define     PWM07CR     (*(unsigned char volatile xdata *)0xff4c)
-#define     PWM07HLD    (*(unsigned char volatile xdata *)0xff4d)
-#define     PWM1CH      (*(unsigned char volatile xdata *)0xff50)
-#define     PWM1CL      (*(unsigned char volatile xdata *)0xff51)
-#define     PWM1CKS     (*(unsigned char volatile xdata *)0xff52)
-#define     PWM1IF      (*(unsigned char volatile xdata *)0xff55)
-#define     PWM1FDCR    (*(unsigned char volatile xdata *)0xff56)
-#define     PWM10T1H    (*(unsigned char volatile xdata *)0xff60)
-#define     PWM10T1L    (*(unsigned char volatile xdata *)0xff61)
-#define     PWM10T2H    (*(unsigned char volatile xdata *)0xff62)
-#define     PWM10T2L    (*(unsigned char volatile xdata *)0xff63)
-#define     PWM10CR     (*(unsigned char volatile xdata *)0xff64)
-#define     PWM10HLD    (*(unsigned char volatile xdata *)0xff65)
-#define     PWM11T1H    (*(unsigned char volatile xdata *)0xff68)
-#define     PWM11T1L    (*(unsigned char volatile xdata *)0xff69)
-#define     PWM11T2H    (*(unsigned char volatile xdata *)0xff6a)
-#define     PWM11T2L    (*(unsigned char volatile xdata *)0xff6b)
-#define     PWM11CR     (*(unsigned char volatile xdata *)0xff6c)
-#define     PWM11HLD    (*(unsigned char volatile xdata *)0xff6d)
-#define     PWM12T1H    (*(unsigned char volatile xdata *)0xff70)
-#define     PWM12T1L    (*(unsigned char volatile xdata *)0xff71)
-#define     PWM12T2H    (*(unsigned char volatile xdata *)0xff72)
-#define     PWM12T2L    (*(unsigned char volatile xdata *)0xff73)
-#define     PWM12CR     (*(unsigned char volatile xdata *)0xff74)
-#define     PWM12HLD    (*(unsigned char volatile xdata *)0xff75)
-#define     PWM13T1H    (*(unsigned char volatile xdata *)0xff78)
-#define     PWM13T1L    (*(unsigned char volatile xdata *)0xff79)
-#define     PWM13T2H    (*(unsigned char volatile xdata *)0xff7a)
-#define     PWM13T2L    (*(unsigned char volatile xdata *)0xff7b)
-#define     PWM13CR     (*(unsigned char volatile xdata *)0xff7c)
-#define     PWM13HLD    (*(unsigned char volatile xdata *)0xff7d)
-#define     PWM14T1H    (*(unsigned char volatile xdata *)0xff80)
-#define     PWM14T1L    (*(unsigned char volatile xdata *)0xff81)
-#define     PWM14T2H    (*(unsigned char volatile xdata *)0xff82)
-#define     PWM14T2L    (*(unsigned char volatile xdata *)0xff83)
-#define     PWM14CR     (*(unsigned char volatile xdata *)0xff84)
-#define     PWM14HLD    (*(unsigned char volatile xdata *)0xff85)
-#define     PWM15T1H    (*(unsigned char volatile xdata *)0xff88)
-#define     PWM15T1L    (*(unsigned char volatile xdata *)0xff89)
-#define     PWM15T2H    (*(unsigned char volatile xdata *)0xff8a)
-#define     PWM15T2L    (*(unsigned char volatile xdata *)0xff8b)
-#define     PWM15CR     (*(unsigned char volatile xdata *)0xff8c)
-#define     PWM15HLD    (*(unsigned char volatile xdata *)0xff8d)
-#define     PWM16T1H    (*(unsigned char volatile xdata *)0xff90)
-#define     PWM16T1L    (*(unsigned char volatile xdata *)0xff91)
-#define     PWM16T2H    (*(unsigned char volatile xdata *)0xff92)
-#define     PWM16T2L    (*(unsigned char volatile xdata *)0xff93)
-#define     PWM16CR     (*(unsigned char volatile xdata *)0xff94)
-#define     PWM16HLD    (*(unsigned char volatile xdata *)0xff95)
-#define     PWM17T1H    (*(unsigned char volatile xdata *)0xff98)
-#define     PWM17T1L    (*(unsigned char volatile xdata *)0xff99)
-#define     PWM17T2H    (*(unsigned char volatile xdata *)0xff9a)
-#define     PWM17T2L    (*(unsigned char volatile xdata *)0xff9b)
-#define     PWM17CR     (*(unsigned char volatile xdata *)0xff9c)
-#define     PWM17HLD    (*(unsigned char volatile xdata *)0xff9d)
-#define     PWM2CH      (*(unsigned char volatile xdata *)0xffa0)
-#define     PWM2CL      (*(unsigned char volatile xdata *)0xffa1)
-#define     PWM2CKS     (*(unsigned char volatile xdata *)0xffa2)
-#define     PWM2TADCH   (*(unsigned char volatile xdata *)0xffa3)
-#define     PWM2TADCL   (*(unsigned char volatile xdata *)0xffa4)
-#define     PWM2IF      (*(unsigned char volatile xdata *)0xffa5)
-#define     PWM2FDCR    (*(unsigned char volatile xdata *)0xffa6)
-#define     PWM20T1H    (*(unsigned char volatile xdata *)0xffb0)
-#define     PWM20T1L    (*(unsigned char volatile xdata *)0xffb1)
-#define     PWM20T2H    (*(unsigned char volatile xdata *)0xffb2)
-#define     PWM20T2L    (*(unsigned char volatile xdata *)0xffb3)
-#define     PWM20CR     (*(unsigned char volatile xdata *)0xffb4)
-#define     PWM20HLD    (*(unsigned char volatile xdata *)0xffb5)
-#define     PWM21T1H    (*(unsigned char volatile xdata *)0xffb8)
-#define     PWM21T1L    (*(unsigned char volatile xdata *)0xffb9)
-#define     PWM21T2H    (*(unsigned char volatile xdata *)0xffba)
-#define     PWM21T2L    (*(unsigned char volatile xdata *)0xffbb)
-#define     PWM21CR     (*(unsigned char volatile xdata *)0xffbc)
-#define     PWM21HLD    (*(unsigned char volatile xdata *)0xffbd)
-#define     PWM22T1H    (*(unsigned char volatile xdata *)0xffc0)
-#define     PWM22T1L    (*(unsigned char volatile xdata *)0xffc1)
-#define     PWM22T2H    (*(unsigned char volatile xdata *)0xffc2)
-#define     PWM22T2L    (*(unsigned char volatile xdata *)0xffc3)
-#define     PWM22CR     (*(unsigned char volatile xdata *)0xffc4)
-#define     PWM22HLD    (*(unsigned char volatile xdata *)0xffc5)
-#define     PWM23T1H    (*(unsigned char volatile xdata *)0xffc8)
-#define     PWM23T1L    (*(unsigned char volatile xdata *)0xffc9)
-#define     PWM23T2H    (*(unsigned char volatile xdata *)0xffca)
-#define     PWM23T2L    (*(unsigned char volatile xdata *)0xffcb)
-#define     PWM23CR     (*(unsigned char volatile xdata *)0xffcc)
-#define     PWM23HLD    (*(unsigned char volatile xdata *)0xffcd)
-#define     PWM24T1H    (*(unsigned char volatile xdata *)0xffd0)
-#define     PWM24T1L    (*(unsigned char volatile xdata *)0xffd1)
-#define     PWM24T2H    (*(unsigned char volatile xdata *)0xffd2)
-#define     PWM24T2L    (*(unsigned char volatile xdata *)0xffd3)
-#define     PWM24CR     (*(unsigned char volatile xdata *)0xffd4)
-#define     PWM24HLD    (*(unsigned char volatile xdata *)0xffd5)
-#define     PWM25T1H    (*(unsigned char volatile xdata *)0xffd8)
-#define     PWM25T1L    (*(unsigned char volatile xdata *)0xffd9)
-#define     PWM25T2H    (*(unsigned char volatile xdata *)0xffda)
-#define     PWM25T2L    (*(unsigned char volatile xdata *)0xffdb)
-#define     PWM25CR     (*(unsigned char volatile xdata *)0xffdc)
-#define     PWM25HLD    (*(unsigned char volatile xdata *)0xffdd)
-#define     PWM26T1H    (*(unsigned char volatile xdata *)0xffe0)
-#define     PWM26T1L    (*(unsigned char volatile xdata *)0xffe1)
-#define     PWM26T2H    (*(unsigned char volatile xdata *)0xffe2)
-#define     PWM26T2L    (*(unsigned char volatile xdata *)0xffe3)
-#define     PWM26CR     (*(unsigned char volatile xdata *)0xffe4)
-#define     PWM26HLD    (*(unsigned char volatile xdata *)0xffe5)
-#define     PWM27T1H    (*(unsigned char volatile xdata *)0xffe8)
-#define     PWM27T1L    (*(unsigned char volatile xdata *)0xffe9)
-#define     PWM27T2H    (*(unsigned char volatile xdata *)0xffea)
-#define     PWM27T2L    (*(unsigned char volatile xdata *)0xffeb)
-#define     PWM27CR     (*(unsigned char volatile xdata *)0xffec)
-#define     PWM27HLD    (*(unsigned char volatile xdata *)0xffed)
+#define     T3T4PS      (*(unsigned char volatile xdata *)0xfeac)
 
 /////////////////////////////////////////////////
 //FD00H-FDFFH
@@ -533,163 +596,215 @@ sfr         RSTCFG      =           0xFF;
 //FC00H-FCFFH
 /////////////////////////////////////////////////
 
+#define     PWM3C       (*(unsigned int  volatile xdata *)0xfc00)
 #define     PWM3CH      (*(unsigned char volatile xdata *)0xfc00)
 #define     PWM3CL      (*(unsigned char volatile xdata *)0xfc01)
 #define     PWM3CKS     (*(unsigned char volatile xdata *)0xfc02)
 #define     PWM3IF      (*(unsigned char volatile xdata *)0xfc05)
 #define     PWM3FDCR    (*(unsigned char volatile xdata *)0xfc06)
+#define     PWM30T1     (*(unsigned int  volatile xdata *)0xfc10)
 #define     PWM30T1H    (*(unsigned char volatile xdata *)0xfc10)
 #define     PWM30T1L    (*(unsigned char volatile xdata *)0xfc11)
+#define     PWM30T2     (*(unsigned int  volatile xdata *)0xfc12)
 #define     PWM30T2H    (*(unsigned char volatile xdata *)0xfc12)
 #define     PWM30T2L    (*(unsigned char volatile xdata *)0xfc13)
 #define     PWM30CR     (*(unsigned char volatile xdata *)0xfc14)
 #define     PWM30HLD    (*(unsigned char volatile xdata *)0xfc15)
+#define     PWM31T1     (*(unsigned int  volatile xdata *)0xfc18)
 #define     PWM31T1H    (*(unsigned char volatile xdata *)0xfc18)
 #define     PWM31T1L    (*(unsigned char volatile xdata *)0xfc19)
+#define     PWM31T2     (*(unsigned int  volatile xdata *)0xfc1a)
 #define     PWM31T2H    (*(unsigned char volatile xdata *)0xfc1a)
 #define     PWM31T2L    (*(unsigned char volatile xdata *)0xfc1b)
 #define     PWM31CR     (*(unsigned char volatile xdata *)0xfc1c)
 #define     PWM31HLD    (*(unsigned char volatile xdata *)0xfc1d)
+#define     PWM32T1     (*(unsigned int  volatile xdata *)0xfc20)
 #define     PWM32T1H    (*(unsigned char volatile xdata *)0xfc20)
 #define     PWM32T1L    (*(unsigned char volatile xdata *)0xfc21)
+#define     PWM32T2     (*(unsigned int  volatile xdata *)0xfc22)
 #define     PWM32T2H    (*(unsigned char volatile xdata *)0xfc22)
 #define     PWM32T2L    (*(unsigned char volatile xdata *)0xfc23)
 #define     PWM32CR     (*(unsigned char volatile xdata *)0xfc24)
 #define     PWM32HLD    (*(unsigned char volatile xdata *)0xfc25)
+#define     PWM33T1     (*(unsigned int  volatile xdata *)0xfc28)
 #define     PWM33T1H    (*(unsigned char volatile xdata *)0xfc28)
 #define     PWM33T1L    (*(unsigned char volatile xdata *)0xfc29)
+#define     PWM33T2     (*(unsigned int  volatile xdata *)0xfc2a)
 #define     PWM33T2H    (*(unsigned char volatile xdata *)0xfc2a)
 #define     PWM33T2L    (*(unsigned char volatile xdata *)0xfc2b)
 #define     PWM33CR     (*(unsigned char volatile xdata *)0xfc2c)
 #define     PWM33HLD    (*(unsigned char volatile xdata *)0xfc2d)
+#define     PWM34T1     (*(unsigned int  volatile xdata *)0xfc30)
 #define     PWM34T1H    (*(unsigned char volatile xdata *)0xfc30)
 #define     PWM34T1L    (*(unsigned char volatile xdata *)0xfc31)
+#define     PWM34T2     (*(unsigned int  volatile xdata *)0xfc32)
 #define     PWM34T2H    (*(unsigned char volatile xdata *)0xfc32)
 #define     PWM34T2L    (*(unsigned char volatile xdata *)0xfc33)
 #define     PWM34CR     (*(unsigned char volatile xdata *)0xfc34)
 #define     PWM34HLD    (*(unsigned char volatile xdata *)0xfc35)
+#define     PWM35T1     (*(unsigned int  volatile xdata *)0xfc38)
 #define     PWM35T1H    (*(unsigned char volatile xdata *)0xfc38)
 #define     PWM35T1L    (*(unsigned char volatile xdata *)0xfc39)
+#define     PWM35T2     (*(unsigned int  volatile xdata *)0xfc3a)
 #define     PWM35T2H    (*(unsigned char volatile xdata *)0xfc3a)
 #define     PWM35T2L    (*(unsigned char volatile xdata *)0xfc3b)
 #define     PWM35CR     (*(unsigned char volatile xdata *)0xfc3c)
 #define     PWM35HLD    (*(unsigned char volatile xdata *)0xfc3d)
+#define     PWM36T1     (*(unsigned int  volatile xdata *)0xfc40)
 #define     PWM36T1H    (*(unsigned char volatile xdata *)0xfc40)
 #define     PWM36T1L    (*(unsigned char volatile xdata *)0xfc41)
+#define     PWM36T2     (*(unsigned int  volatile xdata *)0xfc42)
 #define     PWM36T2H    (*(unsigned char volatile xdata *)0xfc42)
 #define     PWM36T2L    (*(unsigned char volatile xdata *)0xfc43)
 #define     PWM36CR     (*(unsigned char volatile xdata *)0xfc44)
 #define     PWM36HLD    (*(unsigned char volatile xdata *)0xfc45)
+#define     PWM37T1     (*(unsigned int  volatile xdata *)0xfc48)
 #define     PWM37T1H    (*(unsigned char volatile xdata *)0xfc48)
 #define     PWM37T1L    (*(unsigned char volatile xdata *)0xfc49)
+#define     PWM37T2     (*(unsigned int  volatile xdata *)0xfc4a)
 #define     PWM37T2H    (*(unsigned char volatile xdata *)0xfc4a)
 #define     PWM37T2L    (*(unsigned char volatile xdata *)0xfc4b)
 #define     PWM37CR     (*(unsigned char volatile xdata *)0xfc4c)
 #define     PWM37HLD    (*(unsigned char volatile xdata *)0xfc4d)
+#define     PWM4C       (*(unsigned int  volatile xdata *)0xfc50)
 #define     PWM4CH      (*(unsigned char volatile xdata *)0xfc50)
 #define     PWM4CL      (*(unsigned char volatile xdata *)0xfc51)
 #define     PWM4CKS     (*(unsigned char volatile xdata *)0xfc52)
+#define     PWM4TADC    (*(unsigned int  volatile xdata *)0xfc53)
 #define     PWM4TADCH   (*(unsigned char volatile xdata *)0xfc53)
 #define     PWM4TADCL   (*(unsigned char volatile xdata *)0xfc54)
 #define     PWM4IF      (*(unsigned char volatile xdata *)0xfc55)
 #define     PWM4FDCR    (*(unsigned char volatile xdata *)0xfc56)
+#define     PWM40T1     (*(unsigned int  volatile xdata *)0xfc60)
 #define     PWM40T1H    (*(unsigned char volatile xdata *)0xfc60)
 #define     PWM40T1L    (*(unsigned char volatile xdata *)0xfc61)
+#define     PWM40T2     (*(unsigned int  volatile xdata *)0xfc62)
 #define     PWM40T2H    (*(unsigned char volatile xdata *)0xfc62)
 #define     PWM40T2L    (*(unsigned char volatile xdata *)0xfc63)
 #define     PWM40CR     (*(unsigned char volatile xdata *)0xfc64)
 #define     PWM40HLD    (*(unsigned char volatile xdata *)0xfc65)
+#define     PWM41T1     (*(unsigned int  volatile xdata *)0xfc68)
 #define     PWM41T1H    (*(unsigned char volatile xdata *)0xfc68)
 #define     PWM41T1L    (*(unsigned char volatile xdata *)0xfc69)
+#define     PWM41T2     (*(unsigned int  volatile xdata *)0xfc6a)
 #define     PWM41T2H    (*(unsigned char volatile xdata *)0xfc6a)
 #define     PWM41T2L    (*(unsigned char volatile xdata *)0xfc6b)
 #define     PWM41CR     (*(unsigned char volatile xdata *)0xfc6c)
 #define     PWM41HLD    (*(unsigned char volatile xdata *)0xfc6d)
+#define     PWM42T1     (*(unsigned int  volatile xdata *)0xfc70)
 #define     PWM42T1H    (*(unsigned char volatile xdata *)0xfc70)
 #define     PWM42T1L    (*(unsigned char volatile xdata *)0xfc71)
+#define     PWM42T2     (*(unsigned int  volatile xdata *)0xfc72)
 #define     PWM42T2H    (*(unsigned char volatile xdata *)0xfc72)
 #define     PWM42T2L    (*(unsigned char volatile xdata *)0xfc73)
 #define     PWM42CR     (*(unsigned char volatile xdata *)0xfc74)
 #define     PWM42HLD    (*(unsigned char volatile xdata *)0xfc75)
+#define     PWM43T1     (*(unsigned int  volatile xdata *)0xfc78)
 #define     PWM43T1H    (*(unsigned char volatile xdata *)0xfc78)
 #define     PWM43T1L    (*(unsigned char volatile xdata *)0xfc79)
+#define     PWM43T2     (*(unsigned int  volatile xdata *)0xfc7a)
 #define     PWM43T2H    (*(unsigned char volatile xdata *)0xfc7a)
 #define     PWM43T2L    (*(unsigned char volatile xdata *)0xfc7b)
 #define     PWM43CR     (*(unsigned char volatile xdata *)0xfc7c)
 #define     PWM43HLD    (*(unsigned char volatile xdata *)0xfc7d)
+#define     PWM44T1     (*(unsigned int  volatile xdata *)0xfc80)
 #define     PWM44T1H    (*(unsigned char volatile xdata *)0xfc80)
 #define     PWM44T1L    (*(unsigned char volatile xdata *)0xfc81)
+#define     PWM44T2     (*(unsigned int  volatile xdata *)0xfc82)
 #define     PWM44T2H    (*(unsigned char volatile xdata *)0xfc82)
 #define     PWM44T2L    (*(unsigned char volatile xdata *)0xfc83)
 #define     PWM44CR     (*(unsigned char volatile xdata *)0xfc84)
 #define     PWM44HLD    (*(unsigned char volatile xdata *)0xfc85)
+#define     PWM45T1     (*(unsigned int  volatile xdata *)0xfc88)
 #define     PWM45T1H    (*(unsigned char volatile xdata *)0xfc88)
 #define     PWM45T1L    (*(unsigned char volatile xdata *)0xfc89)
+#define     PWM45T2     (*(unsigned int  volatile xdata *)0xfc8a)
 #define     PWM45T2H    (*(unsigned char volatile xdata *)0xfc8a)
 #define     PWM45T2L    (*(unsigned char volatile xdata *)0xfc8b)
 #define     PWM45CR     (*(unsigned char volatile xdata *)0xfc8c)
 #define     PWM45HLD    (*(unsigned char volatile xdata *)0xfc8d)
+#define     PWM46T1     (*(unsigned int  volatile xdata *)0xfc90)
 #define     PWM46T1H    (*(unsigned char volatile xdata *)0xfc90)
 #define     PWM46T1L    (*(unsigned char volatile xdata *)0xfc91)
+#define     PWM46T2     (*(unsigned int  volatile xdata *)0xfc92)
 #define     PWM46T2H    (*(unsigned char volatile xdata *)0xfc92)
 #define     PWM46T2L    (*(unsigned char volatile xdata *)0xfc93)
 #define     PWM46CR     (*(unsigned char volatile xdata *)0xfc94)
 #define     PWM46HLD    (*(unsigned char volatile xdata *)0xfc95)
+#define     PWM47T1     (*(unsigned int  volatile xdata *)0xfc98)
 #define     PWM47T1H    (*(unsigned char volatile xdata *)0xfc98)
 #define     PWM47T1L    (*(unsigned char volatile xdata *)0xfc99)
+#define     PWM47T2     (*(unsigned int  volatile xdata *)0xfc9a)
 #define     PWM47T2H    (*(unsigned char volatile xdata *)0xfc9a)
 #define     PWM47T2L    (*(unsigned char volatile xdata *)0xfc9b)
 #define     PWM47CR     (*(unsigned char volatile xdata *)0xfc9c)
 #define     PWM47HLD    (*(unsigned char volatile xdata *)0xfc9d)
+#define     PWM5C       (*(unsigned int  volatile xdata *)0xfca0)
 #define     PWM5CH      (*(unsigned char volatile xdata *)0xfca0)
 #define     PWM5CL      (*(unsigned char volatile xdata *)0xfca1)
 #define     PWM5CKS     (*(unsigned char volatile xdata *)0xfca2)
 #define     PWM5IF      (*(unsigned char volatile xdata *)0xfca5)
 #define     PWM5FDCR    (*(unsigned char volatile xdata *)0xfca6)
+#define     PWM50T1     (*(unsigned int  volatile xdata *)0xfcb0)
 #define     PWM50T1H    (*(unsigned char volatile xdata *)0xfcb0)
 #define     PWM50T1L    (*(unsigned char volatile xdata *)0xfcb1)
+#define     PWM50T2     (*(unsigned int  volatile xdata *)0xfcb2)
 #define     PWM50T2H    (*(unsigned char volatile xdata *)0xfcb2)
 #define     PWM50T2L    (*(unsigned char volatile xdata *)0xfcb3)
 #define     PWM50CR     (*(unsigned char volatile xdata *)0xfcb4)
 #define     PWM50HLD    (*(unsigned char volatile xdata *)0xfcb5)
+#define     PWM51T1     (*(unsigned int  volatile xdata *)0xfcb8)
 #define     PWM51T1H    (*(unsigned char volatile xdata *)0xfcb8)
 #define     PWM51T1L    (*(unsigned char volatile xdata *)0xfcb9)
+#define     PWM51T2     (*(unsigned int  volatile xdata *)0xfcba)
 #define     PWM51T2H    (*(unsigned char volatile xdata *)0xfcba)
 #define     PWM51T2L    (*(unsigned char volatile xdata *)0xfcbb)
 #define     PWM51CR     (*(unsigned char volatile xdata *)0xfcbc)
 #define     PWM51HLD    (*(unsigned char volatile xdata *)0xfcbd)
+#define     PWM52T1     (*(unsigned int  volatile xdata *)0xfcc0)
 #define     PWM52T1H    (*(unsigned char volatile xdata *)0xfcc0)
 #define     PWM52T1L    (*(unsigned char volatile xdata *)0xfcc1)
+#define     PWM52T2     (*(unsigned int  volatile xdata *)0xfcc2)
 #define     PWM52T2H    (*(unsigned char volatile xdata *)0xfcc2)
 #define     PWM52T2L    (*(unsigned char volatile xdata *)0xfcc3)
 #define     PWM52CR     (*(unsigned char volatile xdata *)0xfcc4)
 #define     PWM52HLD    (*(unsigned char volatile xdata *)0xfcc5)
+#define     PWM53T1     (*(unsigned int  volatile xdata *)0xfcc8)
 #define     PWM53T1H    (*(unsigned char volatile xdata *)0xfcc8)
 #define     PWM53T1L    (*(unsigned char volatile xdata *)0xfcc9)
+#define     PWM53T2     (*(unsigned int  volatile xdata *)0xfcca)
 #define     PWM53T2H    (*(unsigned char volatile xdata *)0xfcca)
 #define     PWM53T2L    (*(unsigned char volatile xdata *)0xfccb)
 #define     PWM53CR     (*(unsigned char volatile xdata *)0xfccc)
 #define     PWM53HLD    (*(unsigned char volatile xdata *)0xfccd)
+#define     PWM54T1     (*(unsigned int  volatile xdata *)0xfcd0)
 #define     PWM54T1H    (*(unsigned char volatile xdata *)0xfcd0)
 #define     PWM54T1L    (*(unsigned char volatile xdata *)0xfcd1)
+#define     PWM54T2     (*(unsigned int  volatile xdata *)0xfcd2)
 #define     PWM54T2H    (*(unsigned char volatile xdata *)0xfcd2)
 #define     PWM54T2L    (*(unsigned char volatile xdata *)0xfcd3)
 #define     PWM54CR     (*(unsigned char volatile xdata *)0xfcd4)
 #define     PWM54HLD    (*(unsigned char volatile xdata *)0xfcd5)
+#define     PWM55T1     (*(unsigned int  volatile xdata *)0xfcd8)
 #define     PWM55T1H    (*(unsigned char volatile xdata *)0xfcd8)
 #define     PWM55T1L    (*(unsigned char volatile xdata *)0xfcd9)
+#define     PWM55T2     (*(unsigned int  volatile xdata *)0xfcda)
 #define     PWM55T2H    (*(unsigned char volatile xdata *)0xfcda)
 #define     PWM55T2L    (*(unsigned char volatile xdata *)0xfcdb)
 #define     PWM55CR     (*(unsigned char volatile xdata *)0xfcdc)
 #define     PWM55HLD    (*(unsigned char volatile xdata *)0xfcdd)
+#define     PWM56T1     (*(unsigned int  volatile xdata *)0xfce0)
 #define     PWM56T1H    (*(unsigned char volatile xdata *)0xfce0)
 #define     PWM56T1L    (*(unsigned char volatile xdata *)0xfce1)
+#define     PWM56T2     (*(unsigned int  volatile xdata *)0xfce2)
 #define     PWM56T2H    (*(unsigned char volatile xdata *)0xfce2)
 #define     PWM56T2L    (*(unsigned char volatile xdata *)0xfce3)
 #define     PWM56CR     (*(unsigned char volatile xdata *)0xfce4)
 #define     PWM56HLD    (*(unsigned char volatile xdata *)0xfce5)
+#define     PWM57T1     (*(unsigned int  volatile xdata *)0xfce8)
 #define     PWM57T1H    (*(unsigned char volatile xdata *)0xfce8)
 #define     PWM57T1L    (*(unsigned char volatile xdata *)0xfce9)
+#define     PWM57T2     (*(unsigned int  volatile xdata *)0xfcea)
 #define     PWM57T2H    (*(unsigned char volatile xdata *)0xfcea)
 #define     PWM57T2L    (*(unsigned char volatile xdata *)0xfceb)
 #define     PWM57CR     (*(unsigned char volatile xdata *)0xfcec)

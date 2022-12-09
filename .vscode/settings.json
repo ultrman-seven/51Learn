@@ -5,6 +5,7 @@
         "reg51.h": "c",
         "REG51.H": "cpp",
         "reg52.h": "c",
-        "REG52.H": "cpp"
+        "REG52.H": "cpp",
+        "spi.h": "c"
     }
 }
