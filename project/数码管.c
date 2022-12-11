@@ -1,7 +1,7 @@
 #include "common.h"
 #include "reg51.h"
 
-#define __SMG_TEST_
+// #define __SMG_TEST_
 
 sbit smg138D0 = def_s_bit(P2, 2);
 sbit smg138D1 = def_s_bit(P2, 3);

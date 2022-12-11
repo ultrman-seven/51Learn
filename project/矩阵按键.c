@@ -1,6 +1,8 @@
 #include "common.h"
 #include "reg51.h"
 
+// #define __MAT_TEST_
+
 #define matKeyPort P1
 
 int8_t matrixKeyScan(void)
@@ -35,6 +37,7 @@ int8_t matrixKeyScan(void)
     return rowNum * 4 + colNum;
 }
 
+#ifdef __MAT_TEST_
 int main()
 {
     int8_t keyNum;
@@ -48,3 +51,4 @@ int main()
         delayMs(100);
     }
 }
+#endif
