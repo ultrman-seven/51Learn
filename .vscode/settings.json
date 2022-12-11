@@ -6,6 +6,9 @@
         "REG51.H": "cpp",
         "reg52.h": "c",
         "REG52.H": "cpp",
-        "spi.h": "c"
+        "spi.h": "c",
+        "oled.h": "c",
+        "stdint.h": "c",
+        "stdio.h": "c"
     }
 }
