@@ -9,6 +9,10 @@
         "spi.h": "c",
         "oled.h": "c",
         "stdint.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stcint.h": "c",
+        "wy_chipheader.h": "c",
+        "wy_exti.h": "c",
+        "ds1302.h": "c"
     }
 }

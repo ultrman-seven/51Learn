@@ -1,5 +1,4 @@
 #include "common.h"
-#include "reg51.h"
 // #include "reg52.h"
 
 #ifndef __VS_CODE_

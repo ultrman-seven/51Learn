@@ -4,10 +4,15 @@
 #include "reg51.h"
 #include "common.h"
 
-#define SPI_CPOL_LOW
-// #define SPI_CPOL_HIGH
+// #define SPI_CPOL_LOW
+#define SPI_CPOL_HIGH
 
+#define SPI_CPHA_2Edge
 // #define SPI_CPHA_1Edge
+
+// #define SPI_FirstBit_Low2High
+#define SPI_FirstBit_High2Low
+
 void SPI_Init(void);
 void SPI_SendByte(uint8_t dat);
 uint8_t SPI_ReadByte(void);

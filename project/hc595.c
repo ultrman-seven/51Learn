@@ -1,5 +1,4 @@
 #include "common.h"
-#include "reg51.h"
 
 /**
  * According to the user hardware schematic diagram,

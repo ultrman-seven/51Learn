@@ -5,16 +5,26 @@ sbit spi_mosi = def_s_bit(P0, 1);
 sbit spi_miso = def_s_bit(P1, 0);
 
 #ifdef SPI_CPOL_LOW
-#define SPI_CPOL_BUSY (0)
-#define SPI_CPOL_FREE (1)
-#elif defined SPI_CPOL_HIGH
-#define SPI_CPOL_BUSY (1)
-#define SPI_CPOL_FREE (0)
+#define _SPI_CPOL_BUSY (1)
+#define _SPI_CPOL_FREE (0)
+// #elif defined SPI_CPOL_HIGH
+#else
+#define _SPI_CPOL_BUSY (0)
+#define _SPI_CPOL_FREE (1)
+#endif
+
+#ifdef SPI_FirstBit_High2Low
+#define _SPI_DATA_MASK (0x80)
+#define _SPI_DATA_Shift(__d) (__d <<= 1)
+// #elif defined SPI_FirstBit_Low2High
+#else
+#define _SPI_DATA_MASK (0x01)
+#define _SPI_DATA_Shift(__d) (__d >>= 1)
 #endif
 
 void SPI_Init(void)
 {
-        spi_sck = SPI_CPOL_FREE;
+        spi_sck = _SPI_CPOL_FREE;
 }
 
 void SPI_SendByte(uint8_t dat)
@@ -23,19 +33,19 @@ void SPI_SendByte(uint8_t dat)
         while (cnt--)
         {
 #ifdef SPI_CPHA_1Edge
-                spi_mosi = dat & 0x80;
+                spi_mosi = dat & _SPI_DATA_MASK;
                 _nop_();
-                spi_sck = SPI_CPOL_BUSY;
+                spi_sck = _SPI_CPOL_BUSY;
                 _nop_();
-                spi_sck = SPI_CPOL_FREE;
+                spi_sck = _SPI_CPOL_FREE;
 #else
-                spi_sck = SPI_CPOL_BUSY;
-                spi_mosi = dat & 0x80;
+                spi_sck = _SPI_CPOL_BUSY;
+                spi_mosi = dat & _SPI_DATA_MASK;
                 _nop_();
-                spi_sck = SPI_CPOL_FREE;
+                spi_sck = _SPI_CPOL_FREE;
                 _nop_();
 #endif
-                dat <<= 1;
+                _SPI_DATA_Shift(dat);
         }
 }
 
@@ -45,17 +55,17 @@ uint8_t SPI_ReadByte(void)
 
         while (cnt--)
         {
-                result <<= 1;
+                _SPI_DATA_Shift(result);
 #ifdef SPI_CPHA_1Edge
-                spi_sck = SPI_CPOL_BUSY;
+                spi_sck = _SPI_CPOL_BUSY;
                 _nop_();
                 result |= spi_miso;
-                spi_sck = SPI_CPOL_FREE;
+                spi_sck = _SPI_CPOL_FREE;
                 _nop_();
 #else
-                spi_sck = SPI_CPOL_BUSY;
+                spi_sck = _SPI_CPOL_BUSY;
                 _nop_();
-                spi_sck = SPI_CPOL_FREE;
+                spi_sck = _SPI_CPOL_FREE;
                 _nop_();
                 result |= spi_miso;
 #endif
@@ -69,23 +79,23 @@ uint8_t SPI_WriteReadByte(uint8_t dat)
 
         while (cnt--)
         {
-                result <<= 1;
+                _SPI_DATA_Shift(result);
 #ifdef SPI_CPHA_1Edge
-                spi_mosi = dat & 0x80;
+                spi_mosi = dat & _SPI_DATA_MASK;
                 _nop_();
-                spi_sck = SPI_CPOL_BUSY;
+                spi_sck = _SPI_CPOL_BUSY;
                 _nop_();
                 result |= spi_miso;
-                spi_sck = SPI_CPOL_FREE;
+                spi_sck = _SPI_CPOL_FREE;
 #else
-                spi_sck = SPI_CPOL_BUSY;
+                spi_sck = _SPI_CPOL_BUSY;
                 _nop_();
-                spi_mosi = dat & 0x80;
-                spi_sck = SPI_CPOL_FREE;
+                spi_mosi = dat & _SPI_DATA_MASK;
+                spi_sck = _SPI_CPOL_FREE;
                 _nop_();
                 result |= spi_miso;
 #endif
-                dat <<= 1;
+                _SPI_DATA_Shift(dat);
         }
         return result;
 }

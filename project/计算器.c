@@ -1,5 +1,4 @@
 #include "common.h"
-#include "reg51.h"
 
 enum calculatorKey
 {
