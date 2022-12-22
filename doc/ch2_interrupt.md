@@ -87,7 +87,8 @@ $$
 \left |
 \begin{matrix}
 7 \\
-\color{#FFFFFF}{\mathbf{PX3}}
+% \color{#FFFFFF}{\mathbf{PX3}}
+\mathbf{PX3}
 \end{matrix}
 \right |
 \left .
@@ -111,7 +112,8 @@ $$
 \left .
 \begin{matrix}
 3 \\
-\color{#FFFFFF}{\mathbf{PX2}}
+% \color{#FFFFFF}{\mathbf{PX2}}
+\mathbf{PX2}
 \end{matrix}
 \right |
 \left .
@@ -136,6 +138,12 @@ $$
 
 ## 外部中断 `#4b5cc4`
 
+`#4b5cc4`
+
 ## 定时器中断 `#dc6b82`
 
+`#dc6b82`
+
 ## 串口中断 `#fff143`
+
+`#fff143`
