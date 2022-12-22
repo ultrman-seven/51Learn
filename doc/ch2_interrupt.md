@@ -5,7 +5,7 @@
 ### 寄存器总览
 
 |地址|符号|描述|
-||||
+|-|-|-|
 ||||
 
 ### 寄存器描述
@@ -17,9 +17,60 @@
         <th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th><th>0</th>
     </tr>
     <tr align="center">
-        <td style="color:green">EA</td><td></td><td>ET2</td><td>ES</td><td>ET1</td><td style="color:red">EX1</td><td>ET0</td><td style="color:red">EX0</td>
+        <td>EA</td><td></td><td>ET2</td><td>ES</td><td>ET1</td><td>EX1</td><td>ET0</td><td>EX0</td>
     </tr>
 </table>
+
+$$
+\left |
+\begin{matrix}
+7 \\
+\color{#f6bec8}{\mathbf{EA}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+6 \\
+NULL
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+5 \\
+\color{#FF3030}{\mathbf{ET2}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+4 \\
+\color{#fff143}{\mathbf{ES}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+3 \\
+\color{#FF3030}{\mathbf{ET1}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+2 \\
+\color{#4b5cc4}{\mathbf{EX1}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+1 \\
+\color{#FF3030}{\mathbf{ET0}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+0 \\
+\color{#4b5cc4}{\mathbf{EX0}}
+\end{matrix}
+\right |
+$$
 
 #### X_ICON
 
