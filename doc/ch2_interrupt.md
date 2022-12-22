@@ -136,14 +136,12 @@ $$
 \right |
 $$
 
-## 外部中断 `#4b5cc4`
+## 外部中断 $\color{#4b5cc4}{\spadesuit}$
 
-`#4b5cc4`
+`#0969DA`
 
-## 定时器中断 `#dc6b82`
+`#rgb(9, 105, 218)`
 
-`#dc6b82`
+## 定时器中断 $\color{#dc6b82}{\spadesuit}$
 
-## 串口中断 `#fff143`
-
-`#fff143`
+## 串口中断 $\color{#fff143}{\spadesuit}$
