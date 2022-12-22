@@ -37,7 +37,7 @@ NULL
 \left .
 \begin{matrix}
 5 \\
-\color{#FF3030}{\mathbf{ET2}}
+\color{#dc6b82}{\mathbf{ET2}}
 \end{matrix}
 \right |
 \left .
@@ -49,7 +49,7 @@ NULL
 \left .
 \begin{matrix}
 3 \\
-\color{#FF3030}{\mathbf{ET1}}
+\color{#dc6b82}{\mathbf{ET1}}
 \end{matrix}
 \right |
 \left .
@@ -61,7 +61,7 @@ NULL
 \left .
 \begin{matrix}
 1 \\
-\color{#FF3030}{\mathbf{ET0}}
+\color{#dc6b82}{\mathbf{ET0}}
 \end{matrix}
 \right |
 \left .
@@ -83,8 +83,59 @@ $$
     </tr>
 </table>
 
-## 外部中断
+$$
+\left |
+\begin{matrix}
+7 \\
+\color{#FFFFFF}{\mathbf{PX3}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+6 \\
+\color{#4b5cc4}{\mathbf{EX3}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+5 \\
+\color{#4b5cc4}{\mathbf{IE3}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+4 \\
+\color{#dc6b82}{\mathbf{IT3}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+3 \\
+\color{#FFFFFF}{\mathbf{PX2}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+2 \\
+\color{#4b5cc4}{\mathbf{EX2}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+1 \\
+\color{#4b5cc4}{\mathbf{IE2}}
+\end{matrix}
+\right |
+\left .
+\begin{matrix}
+0 \\
+\color{#dc6b82}{\mathbf{IT2}}
+\end{matrix}
+\right |
+$$
 
-## 定时器中断
+## 外部中断 `#4b5cc4`
 
-## 串口中断
+## 定时器中断 `#dc6b82`
+
+## 串口中断 `#fff143`
